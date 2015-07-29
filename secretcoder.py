@@ -1,11 +1,6 @@
 #Ask for imput and put that imput into a funtion
 #Encoder will look up the letter?(Maybe word?) in a dict and put out the matching thing in a file(???????)
-#h
-
-
-
-#Take secret.txt and convert to a string. 
-import random
+import random, string
 def main(message = None):
 	if message == None:
 		message = input("What do you want to write? ")
@@ -14,19 +9,32 @@ def main(message = None):
 
 	makesecret(transformin)
 
+def randomnumbers():
+	number = '012345689'
+	id = ''
+	for i in range(2):
+		id += random.choice(number)
+
+	return id
+
+#def lengthnumbers
+
+
 def transform(message):
-
 	mystring = ""
-
 	for letter in message:
-		mystring += random.randint + str(ord(letter)) + " " + random.randint
+		mystring += str(ord(letter)) + " "
+
+	s = mystring.split()
+	len(s)
+#	print(s)
+	print(mystring,len(s),randomnumbers())
 
 	return mystring
 
-def makesecret(secret):
 
+def makesecret(secret):
 
 	with open('secret.txt', 'w') as f:
 		f.write(secret)
-
 
