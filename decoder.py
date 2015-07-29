@@ -16,14 +16,16 @@ def main():
 def detransform(filename):
  	
 
-
+	random = random.randint
 	numbers = filename.split()
 	mystring = ""
 #	print(numbers)
 	for letter in numbers:
-		mystring += chr(int(letter))
+		mystring += chr(int(letter)) 
 
 
 	return mystring
+
+
   
 main()
