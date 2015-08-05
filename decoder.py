@@ -16,7 +16,6 @@ def main():
 def detransform(filename):
  	
 
-	random = random.randint
 	numbers = filename.split()
 	mystring = ""
 #	print(numbers)

@@ -7,7 +7,6 @@ def main():
 	f = open('printnumbers.txt', 'w')
 #For the number in the range they gave add one
 	for num in range(firstnum,secondnum + 1):
-# If number is greater than one
 
 		if num > 1:
 			for i in range(2,num):

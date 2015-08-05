@@ -7,11 +7,11 @@ def main(message = None):
 
 	transformin = transform(message)
 
-	makesecret(transformin)
+#	makesecret(transformin)
 
 def randomnumbers():
 	number = '012345689'
-	id = ''
+	id = []
 	for i in range(2):
 		id += random.choice(number)
 
@@ -21,20 +21,26 @@ def randomnumbers():
 
 
 def transform(message):
-	mystring = ""
+	mystring = []
 	for letter in message:
-		mystring += str(ord(letter)) + " "
+		mystring += str(ord(letter))
 
-	s = mystring.split()
+
+
+	s = mystring
 	len(s)
-#	print(s)
-	print(mystring,len(s),randomnumbers())
+
+	mergedlist = mystring + randomnumbers + len(s)
+
+	print(mergedlist)
+
+#	print(mystring,len(s),randomnumbers())
 
 	return mystring
 
 
-def makesecret(secret):
+#def makesecret(secret):
 
-	with open('secret.txt', 'w') as f:
-		f.write(secret)
+#	with open('secret.txt', 'w') as f:
+#		f.write(secret)
 

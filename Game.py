@@ -1,8 +1,51 @@
+#def start():
+#	print"""You wake up in the lobby of a in door petting zoo with a paplet for a whole room full of 100 cats! 
+#	You have no idea how you got there but you would be crazy not to find the room full of cats and snuggle. 
+#	But before you get to the cats you need to find the room with them... There are doors to your left and front."""
+
+#	first = input "Do you walk through the left or front? "
+
+#	if input += "left":
+#		print halltocow()
+#	if input += "front":
+#		print hall()
+
+#def halltocow():
+#	print """The door leads you to a diagonal hall, when you get to the end it leads you to a room full of cows!! 
+#	This is amazing but but the room you had in mind.. you decide to continue on your quest. There's a door to your right and in front of you"""
+
+#	first = input "Do you walk through the right or front? "
+
+#	if input += "right":
+#		print starttwo()
+#	if input += "front":
+#		print hall()
+
 def start():
 	#Start Discription
 #	print("Welcom to the A-maz")
 	#Calling the first room
-	currentRoom = room0()
+	room0()
+
+#def spells_for_wand(description, doors):
+#
+#	#Making a string of whatever the spells names are
+#	spellsname = ""
+#	# Puts key in dict into string
+#	for x in doors.keys():	
+#		doorsname += x + " "
+#	#Printing The discription + the exits are and the exits names
+#	print(description, "The exits are " + doorsname)
+#	#prints and lets you choose where to move
+#	move = input("What direction do you want to go? If you want to quit write 'Quit' and press enter: ")
+#	#Calls funtion
+#	if move in doors:
+#		doors[move]()
+#	elif move != "Quit":
+#		proces_user_movement(description, doors)
+#	#input is not equel to key put 
+#	#while move not in 
+
 
 
 def proces_user_movement(description, doors):
@@ -15,14 +58,14 @@ def proces_user_movement(description, doors):
 	#Printing The discription + the exits are and the exits names
 	print(description, "The exits are " + doorsname)
 	#prints and lets you choose where to move
-	move = input("What direction do you want to go? If you want to quit write 'Quit' and press enter: ")
-	#making it either loop or quit
-	if move.lower() in doors:
-		return doors[move.lower()]()
-	elif move.lower() != "quit":
-		return exit
+	move.lower = input("What direction do you want to go? If you want to quit write 'Quit' and press enter: ")
 	#Calls funtion
+	if move.lower in doors:
+		doors[move]()
+	elif move != "Quit":
 		proces_user_movement(description, doors)
+	#input is not equel to key put 
+	#while move not in 
 
 
 
@@ -34,7 +77,7 @@ def room0():
 	#This is the dict that holds the direction of the room and where to go
 	doors = {"north":room2, "west":room1}
 	#Calling funtion
-	return proces_user_movement(description, doors)
+	proces_user_movement(description, doors)
 
 
 def room00():
@@ -43,7 +86,7 @@ def room00():
 	#This is the dict that holds the direction of the room and where to go
 	doors = {"north":room2, "west":room1}
 	#Calling funtion
-	return proces_user_movement(description, doors)
+	proces_user_movement(description, doors)
 
 
 
@@ -53,7 +96,7 @@ def room1():
 
 	doors = {"east":room00, "east":room00}
 
-	return proces_user_movement(description, doors)
+	proces_user_movement(description, doors)
 
 
 
@@ -63,7 +106,7 @@ def room2():
 
 	doors = {"south":room00, "west":room3, "north":room4}
 
-	return proces_user_movement(description, doors)
+	proces_user_movement(description, doors)
 
 
 
@@ -73,7 +116,7 @@ def room3():
 
 	doors = {"east":room2}
 
-	return proces_user_movement(description, doors)
+	proces_user_movement(description, doors)
 
 
 
@@ -83,7 +126,7 @@ def room4():
 
 	doors = {"east":room5, "south":room2, "south":room6}
 
-	return proces_user_movement(description, doors)
+	proces_user_movement(description, doors)
 
 
 
@@ -93,7 +136,7 @@ def room5():
 
 	doors = {"start over":room0}
 
-	return proces_user_movement(description, doors)
+	proces_user_movement(description, doors)
 
 
 def room6():
@@ -102,7 +145,7 @@ def room6():
 
 	doors = {"east":room4}
 
-	return proces_user_movement(description, doors)
+	proces_user_movement(description, doors)
 
 #def cla1():
 #	description = "Today in class you're lerning how to duel for the first time! Try to win againt your enemy Mraco Dalfoy!"
