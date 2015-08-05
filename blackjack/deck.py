@@ -5,11 +5,13 @@ from random import shuffle
 class Deck:
 	"""
 	Class for handling a deck of cards.
+	
 	"""
 
-	def __init__(self, num_decks=4):
+	def __init__(self, num_decks=4, face_cards=[], special_suit_values=[]):
 		self.num_decks = num_decks
-		self.cards_in_deck = self._build_deck()
+		self.cards_in_deck = self._build_deck(face_cards, special_suit_values)
+
 		# self._build_deck()
 
 
@@ -27,7 +29,7 @@ class Deck:
 		else:
 			return "You must ask for one or two cards only. "
 
-	def _build_deck(self, special_face_values=[], special_suit_values=[]):
+	def _build_deck(self, face_cards=[], special_suit_values=[]):
 		"""
 		input: calls rand.shuffle on cards
 		returns: a list of cards
@@ -43,11 +45,6 @@ class Deck:
 					   "Nine",
 					   "Ten"]
 
-		face_cards = ["Jack",
-					 "Queen",
-					 "King",
-					 "Ace"]
-
 		suit_values = []
 
 		#there'll be no error comment if they passed an incorrect num of list
@@ -58,10 +55,14 @@ class Deck:
 		else:
 			suit_values += ["Clubs", "Hearts", "Spades", "Diamonds"]
 		#Let's people custumize their decks
-		if len(special_face_values) == 4:
-			face_values += special_face_values
-		else:
+		if len(face_cards) == 4:
 			face_values += face_cards
+		else:
+			ace_cards = ["Jack",
+						 "Queen",
+						 "King",
+						 "Ace"]
+			face_values += face_cards 
 
 		for deck in range(self.num_decks):
 			# Builds a single deck based on face_values and suit_values
@@ -72,7 +73,7 @@ class Deck:
 					color == "Red"
 				else:
 					color == "Black"
-				final_deck.append(Card(face_value, suit_value, color))
+				final_deck.append(Card(face_value, suit_value, face_cards))
 				
 		shuffle(final_deck)
 		return final_deck
