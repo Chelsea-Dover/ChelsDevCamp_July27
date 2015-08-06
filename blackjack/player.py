@@ -1,8 +1,7 @@
 class Player:
 
-	def __init__(self, hand, name, is_dealer=False):
-
-		self.hand = hand
+	def __init__(self, name, is_dealer=False):
+		#self.hand = hand
 		self.name = name
 		self.is_dealer = is_dealer
 
@@ -20,13 +19,6 @@ class Player:
 		"""
 		pass
 
-	def ace_high_low(self, card):
-		"""
-		Sets card to low
-		imput ace to change
-		"""
-		pass
-
 	def new_card(self, new_card):
 		"""
 		Adds new card to hand
@@ -40,6 +32,9 @@ class Player:
 		Prints players hand
 		"""
 		pass
+
+	def __repr__(self):
+		return self.name
 
 
 
