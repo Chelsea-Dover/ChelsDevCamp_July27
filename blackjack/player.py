@@ -20,7 +20,7 @@ class Player:
 		self.score = 0
 		for card in self.hand:
 			self.score += card.real_value
-			if card.face_value = "Ace" and card.real_value == 11:
+			if card.face_value == "Ace" and card.real_value == 11:
 				ace.append(card)
 		if ace and self.score > self.target_score:
 			index_of_ace = self.hand.index(ace.pop())
@@ -29,7 +29,6 @@ class Player:
 		if self.score > self.target_score:
 			return True
 		elif self.score == 21:
-			print("BLACKJACK!")
 			return True
 		else:
 			return False

@@ -12,7 +12,7 @@ class Deck:
 		self.num_decks = num_decks
 		self.cards_in_deck = self._build_deck()
 
-		# self._build_deck()
+		 #self._build_deck()
 
 
 	def deal(self, num_cards=1):
@@ -36,12 +36,7 @@ class Deck:
 		returns: a list of cards
 		"""
 		self.num_decks
-		face_values = {"Two": 2,  
-					   "Three": 3,
-					   "Four": 4,
-				  	   "Five": 5,
-					   "Six": 6,
-					   "Seven": 7,
+		face_values = {"Seven": 7,
 					   "Eight": 8,
 					   "Nine": 9,
 					   "Ten": 10,
@@ -49,6 +44,12 @@ class Deck:
 					   "Queen": 10,
 		     		   "King": 10,
 		     		   "Ace": 11}
+
+		     	# 	   "Two": 2,  
+					   # "Three": 3,
+					   # "Four": 4,
+				  	 #   "Five": 5,
+					   # "Six": 6,
 
 		suit_values = ["Clubs", "Hearts", "Spades", "Diamonds"]
 

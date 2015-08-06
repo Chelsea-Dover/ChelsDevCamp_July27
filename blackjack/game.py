@@ -19,7 +19,7 @@ class Game:
 		"""
 		canadate = 0
 		for player in self.players:
-			if player.score > canadate:
+			if player.score > canadate and player.score <= 21:
 				canadate = player.score
 				winner = player
 		# doesn't handle all players busted
@@ -89,8 +89,11 @@ class Game:
 					card = self.game_deck.deal()
 					busted = player.new_card(card)
 					player.print_hand()
-					if busted and not player.is_dealer:
+					if busted and not player.is_dealer and player.score > 21:
 						print("CONGRATS YOU BUSTED!!!!!")
+						break
+					elif busted and player.score == 21:
+						print("BLACKJACK!!")
 						break
 				elif choice == "exit":
 					print("Shame on you!! ):<")
