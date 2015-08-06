@@ -17,14 +17,16 @@ class Game:
 		imput = player
 		prints the hight score and winning player
 		"""
+		winners = []
 		canadate = 0
 		for player in self.players:
 			if player.score > canadate and player.score <= 21:
 				canadate = player.score
-				winner = player
+				winners.append(player.name)
 		# doesn't handle all players busted
 		# doesn't handle a tie?
-		print("Yay {} won! \(-u-)/".format(winner))
+		for winner in winners:
+			print("Yay {} won! \(-u-)/".format(winner))
 
 	def define_players(self):
 		"""
