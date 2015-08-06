@@ -1,13 +1,10 @@
 class Player:
 
-	def __init__(self, name, is_dealer=False):
-		self.hand = []
+	def __init__(self, hand, name, is_dealer=False):
+
+		self.hand = hand
 		self.name = name
 		self.is_dealer = is_dealer
-
-
-	def __repr__(self):
-		return str(self.name)
 
 	def score(self):
 		"""
@@ -16,7 +13,6 @@ class Player:
 		"""
 
 		pass
-		
 
 	def hit_stay(self):
 		"""
@@ -37,15 +33,13 @@ class Player:
 		imput new card
 		return hand
 		"""
-		self.hand.append(new_card)
-		return self.hand
+		pass
 
-#	def print_hand(self):
-#		"""
-#		Prints players hand
-#		"""
-#		pass
-
+	def print_hand(self):
+		"""
+		Prints players hand
+		"""
+		pass
 
 
 
