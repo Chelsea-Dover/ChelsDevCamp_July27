@@ -35,19 +35,19 @@ class Deck:
 		returns: a list of cards
 		"""
 		self.num_decks
-		face_values = ["Two", 
-					   "Three",
-					   "Four",
-				  	   "Five",
-					   "Six",
-					   "Seven",
-					   "Eight",
-					   "Nine",
-					   "Ten",
-					   "Jack",
-					   "Queen",
-		     		   "King",
-		     		   "Ace"]
+		face_values = {"Two": 2,  
+					   "Three": 3,
+					   "Four": 4,
+				  	   "Five": 5,
+					   "Six": 6,
+					   "Seven": 7,
+					   "Eight": 8,
+					   "Nine": 9,
+					   "Ten": 10,
+					   "Jack": 10,
+					   "Queen": 10,
+		     		   "King": 10,
+		     		   "Ace": 11}
 
 		suit_values = ["Clubs", "Hearts", "Spades", "Diamonds"]
 
@@ -71,13 +71,13 @@ class Deck:
 		for deck in range(self.num_decks):
 			# Builds a single deck based on face_values and suit_values
 			for card in product(face_values, suit_values):
-				suit_value, face_value = card
+				face_value, suit_value = card
 				color = ""
 				if suit_value == "Hearts" or suit_value == "Diamonds":
 					color == "Red"
 				else:
 					color == "Black"
-				final_deck.append(Card(face_value, suit_value, color))
+				final_deck.append(Card(face_value, face_values[face_value], suit_value, color))
 				
 		shuffle(final_deck)
 		return final_deck

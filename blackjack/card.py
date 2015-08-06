@@ -3,12 +3,14 @@ class Card:
 	Class of cards
 	"""
 
-	def __init__(self, face_value, suit, color, is_hidden=True):
-		self.face_value = face_value
-		#self.real_value = real_value
+	def __init__(self, face_value, real_value, suit, color, is_hidden=False):
+	#	self.face_value_and_real_value, self.real_value = _unpack_card(face_value_and_real_value)
 		self.suit = suit
 		self.color = color
 		self.is_hidden = is_hidden
+		self.real_value = real_value
+		self.face_value = face_value
+
 
 	def __repr__(self):
 		if self.is_hidden:
@@ -24,5 +26,12 @@ class Card:
 		"""
 		pass
 
-	def _real_value(self):
-		pass
+	def flip_ace(self):
+		"""
+		Flips ace value to 1 or 11
+		"""
+		if self.real_value == 1:
+			self.real_value = 11
+		elif self.real_value == 11:
+			self.real_value = 1
+		
