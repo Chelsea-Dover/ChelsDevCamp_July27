@@ -1,7 +1,7 @@
 class Player:
 
 	def __init__(self, name, is_dealer=False):
-		#self.hand = hand
+		self.hand = []
 		self.name = name
 		self.is_dealer = is_dealer
 
@@ -25,13 +25,15 @@ class Player:
 		imput new card
 		return hand
 		"""
-		pass
+		self.hand += new_card
+		return self.hand
 
 	def print_hand(self):
 		"""
 		Prints players hand
 		"""
-		pass
+		for card in self.hand:
+			print(card)
 
 	def __repr__(self):
 		return self.name

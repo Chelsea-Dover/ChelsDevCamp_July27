@@ -20,3 +20,14 @@ def run_test_game():
 	new_game.players = players_for_test
 	new_game.start_game()
 
+def run_ui():
+	new_game = Game()
+	players_for_test = []
+	players_for_test.append(Player("John"))
+	players_for_test.append(Player("Sherlock"))
+	new_game.players = players_for_test
+	return new_game.turn()
+
+
+
+

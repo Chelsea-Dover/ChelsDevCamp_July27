@@ -40,16 +40,28 @@ class Game:
 		"""
 		for player in self.players:
 			cards = self.game_deck.deal(2)
-			print(cards)
+			player.new_card(cards)
+			#player.print_hand()
 		
 
-
-
-	def turn(self, player):
+	def turn(self):
 		"""
 		promts user for hit or stay
 		"""
-		pass
+		hit_stay = ""
+		while hit_stay != "exit":
+			hit_stay = input("Would you like to 'hit' or 'stay'? ").lower()
+			if hit_stay == "hit" or hit_stay == "stay":
+				return hit_stay
+			elif hit_stay != "exit":
+				print("You must choose 'hit' or 'stay' or 'exit'")
+
+
+
+
+
+
+
 
 	# def main(self):
 	# 	"""

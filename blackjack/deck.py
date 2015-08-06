@@ -25,6 +25,8 @@ class Deck:
 			cards_dealt = []
 			for i in range(num_cards):
 				cards_dealt.append(self.cards_in_deck[i])
+				self.cards_in_deck.pop(i)
+				print(len(self.cards_in_deck))
 			return cards_dealt
 		else:
 			return "You must ask for one or two cards only. "
