@@ -68,6 +68,7 @@ class Game:
 				print("You must choose 'hit' or 'stay' or 'exit'")
 
 
+
 	def turn_control(self):
 		"""
 		Player can choose between "stay", "hit" or "exit"
@@ -88,11 +89,18 @@ class Game:
 					card = self.game_deck.deal()
 					busted = player.new_card(card)
 					player.print_hand()
-					if busted:
+					if busted and not player.is_dealer:
+						print("CONGRATS YOU BUSTED!!!!!")
 						break
 				elif choice == "exit":
 					print("Shame on you!! ):<")
 					exit()
 				elif choice == "stay":
 					break
+
+
+
+
+
+
 

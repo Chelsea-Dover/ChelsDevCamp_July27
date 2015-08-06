@@ -7,28 +7,32 @@ class Player:
 		self.name = name
 		self.is_dealer = is_dealer
 		self.score = 0
+		self.target_score = 21
+		if self.is_dealer:
+			target_score = 17
 
-	def calculate_score(self, cards):
+	def calculate_score(self):
 		"""
 		keeps track player score
 		returns total points
 		"""
-		for card in cards:
+		ace = []
+		self.score = 0
+		for card in self.hand:
 			self.score += card.real_value
-		if self.is_dealer:
-			if self.score >= 17:
-				return True
-			else:
-				return False
+			if card.face_value = "Ace" and card.real_value == 11:
+				ace.append(card)
+		if ace and self.score > self.target_score:
+			index_of_ace = self.hand.index(ace.pop())
+			self.hand[index_of_ace].flip_ace()
+			return self.calculate_score()
+		if self.score > self.target_score:
+			return True
+		elif self.score == 21:
+			print("BLACKJACK!")
+			return True
 		else:
-			if self.score > 21:
-				print("CONGRATS YOU'VE BUSTED!!!!")
-				return True
-			elif self.score == 21:
-				print("BLACKJACK!")
-				return True
-			else:
-				return False
+			return False
 		
 
 	def hit_stay(self):
@@ -44,7 +48,7 @@ class Player:
 		return hand
 		"""
 		self.hand += new_cards
-		return self.calculate_score(new_cards)
+		return self.calculate_score()
 
 	def print_hand(self):
 		"""
