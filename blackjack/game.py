@@ -5,17 +5,26 @@ class Game:
 
 	def __init__(self):
 		self.players = []
-#		self.define_players()
+		self.define_players()
 		self.game_deck = Deck()
 		self.start_game()
+		self.turn_control()
+		self.winner()
 
 
-	def winner(self, players):
+	def winner(self):
 		"""
 		imput = player
 		prints the hight score and winning player
 		"""
-		pass
+		canadate = 0
+		for player in self.players:
+			if player.score > canadate:
+				canadate = player.score
+				winner = player
+		# doesn't handle all players busted
+		# doesn't handle a tie?
+		print("Yay {} won! \(-u-)/".format(winner))
 
 	def define_players(self):
 		"""
@@ -32,7 +41,7 @@ class Game:
 		else:
 			print("You need between 2-5 players")
 			exit()
-
+		self.players.append(Player("Dealer", True))
 
 	def start_game(self):
 		"""
@@ -40,15 +49,16 @@ class Game:
 		"""
 		for player in self.players:
 			cards = self.game_deck.deal(2)
+			if player.is_dealer:
+				cards[0].is_hidden = True
 			player.new_card(cards)
 			#player.print_hand()
 		
 
-	def turn(self, name):
+	def turn(self):
 		"""
 		promts user for hit or stay
 		"""
-		print("It's now {}'s turn".format(name))
 		hit_stay = ""
 		while hit_stay != "exit":
 			hit_stay = input("Would you like to 'hit' or 'stay'? ").lower()
@@ -64,10 +74,16 @@ class Game:
 		"""
 		
 		for player in self.players:
+			print("\n\n\nIt's now {}'s turn".format(player.name))
 			player.print_hand()
 			choice = ""
 			while choice != "stay" or choice != "exit":
-				choice = self.turn(player.name)
+
+				if not player.is_dealer:
+					choice = self.turn()
+				else:
+					choice = player.does_dealer_hit()
+
 				if choice == "hit":
 					card = self.game_deck.deal()
 					busted = player.new_card(card)
@@ -80,19 +96,3 @@ class Game:
 				elif choice == "stay":
 					break
 
-
-
-				
-
-
-
-
-
-
-	# def main(self):
-	# 	"""
-	# 	kicks off game
-	# 	loops through the players and plays game
-	# 	"""
-
-	# 	self.define_players()

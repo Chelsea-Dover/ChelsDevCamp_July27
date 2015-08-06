@@ -15,10 +15,20 @@ class Player:
 		"""
 		for card in cards:
 			self.score += card.real_value
-		if self.score >= 21:
-			return True
+		if self.is_dealer:
+			if self.score >= 17:
+				return True
+			else:
+				return False
 		else:
-			return False
+			if self.score > 21:
+				print("CONGRATS YOU'VE BUSTED!!!!")
+				return True
+			elif self.score == 21:
+				print("BLACKJACK!")
+				return True
+			else:
+				return False
 		
 
 	def hit_stay(self):
@@ -40,14 +50,19 @@ class Player:
 		"""
 		Prints players hand
 		"""
-		print("Your hand and your total score is {}:\n".format(self.score))
+
+		print("{} hand and your total score is {}:\n".format(self.name, self.score))
 		for card in self.hand:
 			print("\t - {}".format(card), sep="\n")
 
 	def __repr__(self):
 		return self.name
 
-
+	def does_dealer_hit(self):
+		if self.score < 17:
+			return "hit"
+		else:
+			return "stay"
 
 
 
