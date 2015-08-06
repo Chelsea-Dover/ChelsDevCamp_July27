@@ -8,3 +8,11 @@ def run_test_deck():
 	print(test_deck.deal())
 	print(test_deck.deal(2))
 
+def run_test_player():
+	test_player = Player("John")
+	print(test_player)
+
+def run_test_game():
+	new_game = Game()
+	return new_game
+
