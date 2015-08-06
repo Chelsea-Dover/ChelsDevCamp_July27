@@ -26,7 +26,7 @@ def run_ui():
 	players_for_test.append(Player("John"))
 	players_for_test.append(Player("Sherlock"))
 	new_game.players = players_for_test
-	return new_game.turn()
+	return new_game
 
 
 

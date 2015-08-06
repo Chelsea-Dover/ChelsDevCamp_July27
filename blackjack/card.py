@@ -19,6 +19,14 @@ class Card:
 			pretty_card = str(self.face_value) + " of " + str(self.suit)
 		return pretty_card
 
+	def __str__(self):
+		if self.is_hidden:
+			pretty_card = "This card is hidden"
+		else:
+			pretty_card = str(self.face_value) + " of " + str(self.suit)
+		return pretty_card
+
+
 
 	def cheat(self, face_value):
 		"""
