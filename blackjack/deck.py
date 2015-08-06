@@ -8,9 +8,9 @@ class Deck:
 	
 	"""
 
-	def __init__(self, num_decks=4, face_cards=[], special_suit_values=[]):
+	def __init__(self, num_decks=4):
 		self.num_decks = num_decks
-		self.cards_in_deck = self._build_deck(face_cards, special_suit_values)
+		self.cards_in_deck = self._build_deck()
 
 		# self._build_deck()
 
@@ -29,7 +29,7 @@ class Deck:
 		else:
 			return "You must ask for one or two cards only. "
 
-	def _build_deck(self, face_cards=[], special_suit_values=[]):
+	def _build_deck(self):
 		"""
 		input: calls rand.shuffle on cards
 		returns: a list of cards
@@ -43,26 +43,30 @@ class Deck:
 					   "Seven",
 					   "Eight",
 					   "Nine",
-					   "Ten"]
+					   "Ten",
+					   "Jack",
+					   "Queen",
+		     		   "King",
+		     		   "Ace"]
 
-		suit_values = []
+		suit_values = ["Clubs", "Hearts", "Spades", "Diamonds"]
 
 		#there'll be no error comment if they passed an incorrect num of list
 		#Untested
 		final_deck = []
-		if len(special_suit_values) == 4:
-			suit_values += special_suit_values
-		else:
-			suit_values += ["Clubs", "Hearts", "Spades", "Diamonds"]
-		#Let's people custumize their decks
-		if len(face_cards) == 4:
-			face_values += face_cards
-		else:
-			ace_cards = ["Jack",
-						 "Queen",
-						 "King",
-						 "Ace"]
-			face_values += face_cards 
+		# if len(special_suit_values) == 4:
+		# 	suit_values += special_suit_values
+		# else:
+		# 	suit_values += ["Clubs", "Hearts", "Spades", "Diamonds"]
+		# #Let's people custumize their decks
+		# if len(face_cards) == 4:
+		# 	face_values += face_cards
+		# else:
+		# 	ace_cards = ["Jack",
+		# 				 "Queen",
+		# 				 "King",
+		# 				 "Ace"]
+		# 	face_values += face_cards 
 
 		for deck in range(self.num_decks):
 			# Builds a single deck based on face_values and suit_values
@@ -73,7 +77,7 @@ class Deck:
 					color == "Red"
 				else:
 					color == "Black"
-				final_deck.append(Card(face_value, suit_value, face_cards))
+				final_deck.append(Card(face_value, suit_value, color))
 				
 		shuffle(final_deck)
 		return final_deck
