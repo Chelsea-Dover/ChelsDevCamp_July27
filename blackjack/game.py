@@ -5,8 +5,9 @@ class Game:
 
 	def __init__(self):
 		self.players = []
-		self.define_players()
+#		self.define_players()
 		self.game_deck = Deck()
+		self.start_game()
 
 
 	def winner(self, players):
@@ -33,11 +34,15 @@ class Game:
 			exit()
 
 
-	# def start_game(self, num_players):
-	# 	"""
-	# 	init deck
-	# 	"""
-	# 	game_deck = Deck()
+	def start_game(self):
+		"""
+		Takes a deck of cards(AKA a list of card objects) and takes a list of player objects
+		"""
+		for player in self.players:
+			cards = self.game_deck.deal(2)
+			print(cards)
+		
+
 
 
 	def turn(self, player):
