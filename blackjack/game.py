@@ -22,11 +22,14 @@ class Game:
 		for player in self.players:
 			if player.score > canadate and player.score <= 21:
 				canadate = player.score
+				#if 
 				winners.append(player.name)
+
+
 		# doesn't handle all players busted
 		# doesn't handle a tie?
 		for winner in winners:
-			print("Yay {} won! \(-u-)/".format(winner))
+			print("\tYay {} won! \(-u-)/".format(winner))
 
 	def define_players(self):
 		"""
@@ -40,6 +43,9 @@ class Game:
 			for player in range(num_players):
 				player_name = input("Please enter player {}'s name: ".format(player+1))
 				self.players.append(Player(player_name))
+		if num_players < 2:
+			print("You need between 2-5 players. Come back when you have friends you loser")
+			exit()
 		else:
 			print("You need between 2-5 players")
 			exit()
@@ -64,6 +70,7 @@ class Game:
 		hit_stay = ""
 		while hit_stay != "exit":
 			hit_stay = input("Would you like to 'hit' or 'stay'? ").lower()
+			print("----------------------------------------")
 			if hit_stay == "hit" or hit_stay == "stay" or hit_stay == "exit":
 				return hit_stay
 			elif hit_stay != "exit":
@@ -77,7 +84,10 @@ class Game:
 		"""
 		
 		for player in self.players:
-			print("\n\n\nIt's now {}'s turn".format(player.name))
+			print("\n")
+			print("----------------------------------------")
+			print("It's now {}'s turn".format(player.name))
+			print("----------------------------------------")
 			player.print_hand()
 			choice = ""
 			while choice != "stay" or choice != "exit":
@@ -92,13 +102,13 @@ class Game:
 					busted = player.new_card(card)
 					player.print_hand()
 					if busted and not player.is_dealer and player.score > 21:
-						print("CONGRATS YOU BUSTED!!!!!")
+						print("\tCONGRATS YOU BUSTED!!!!!")
 						break
 					elif busted and player.score == 21:
-						print("BLACKJACK!!")
+						print("\tBLACKJACK!!")
 						break
 				elif choice == "exit":
-					print("Shame on you!! ):<")
+					print("Fine, I didn't want to play with you anyways (;_;)")
 					exit()
 				elif choice == "stay":
 					break

@@ -54,7 +54,7 @@ class Player:
 		Prints players hand
 		"""
 
-		print("{} hand and your total score is {}:\n".format(self.name, self.score))
+		print("{}'s hand and total score is {}:\n".format(self.name, self.score))
 		for card in self.hand:
 			print("\t - {}".format(card), sep="\n")
 
