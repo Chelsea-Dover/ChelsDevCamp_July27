@@ -94,6 +94,22 @@ class Person:
 # print(test.show_accounts())
 # test.openaccount(700, "savings")
 # print(test.show_accounts())
+####
+#####
+######
+#######
+########
+#########
+########
+######
+####
+###
+##
+#
+##
+###
+####
+####
 		
 
 class Bank:
