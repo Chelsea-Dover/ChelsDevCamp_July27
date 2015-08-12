@@ -28,4 +28,4 @@ class Die:
 		return self.currentValue
 		#pass
 
-new_die = Die(["hearts", "club", "dimond"])
+new_die = Die([1, 2, "angry face", 4, 5, 6])
