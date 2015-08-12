@@ -32,10 +32,7 @@ class Angry_dice:
 		print("\n")
 		input("press ENTER to start!")
 		print("------------------------------------------------------------------------------------------------------")
-		while self.current_stage != 4:
-			self.turn()
-		print("You've won! Calm down!")
-		exit()
+		self.turn()
 
 
 
@@ -46,8 +43,9 @@ class Angry_dice:
 	def turn(self):
 		self.print_turn()
 
-		self.check_angry()
 		self.check_stage()
+
+		self.check_angry()
 		# Get Input
 		roll = input("Roll dice: ")
 
@@ -87,13 +85,10 @@ class Angry_dice:
 					self.current_stage  +=1
 		
 		if self.current_stage == 3 and self.a.currentValue in self.stage_3_goal:
-			print("What about this?")
 			if self.b.currentValue in self.stage_3_goal:
-				print("Ugh")
 				if self.b.currentValue != self.a.currentValue:
-					print("Please work")
-					print("You got it! After this you win!")
-					self.current_stage  +=1
+					print("You've won! Calm down!")
+					exit()
 
 
 	def check_angry(self):
