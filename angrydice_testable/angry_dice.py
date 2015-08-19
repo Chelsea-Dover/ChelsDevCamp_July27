@@ -1,22 +1,19 @@
-from random import choice
-
 from Die_two_point_whoa import Die
 
 class Angry_dice:
 
+
 	def __init__(self):
-		self.a = Die(["1","2","ANGRY","4","5","6"])
-		self.b = Die(["1","2","ANGRY","4","5","6"])
-		self.both_die =  [self.a.currentValue , self.b.currentValue]
+		self.die_a = Die(["1","2","ANGRY","4","5","6"])
+		self.die_b = Die(["1","2","ANGRY","4","5","6"])
 		self.current_stage = 1
-		self.stage_1_goal = ["1","2"]
-		self.stage_2_goal = ["ANGRY","4"]
-		self.stage_3_goal = ["5","6"]	
-		# both_values = [self.a.currentValue, self.b.currentValue]
+		self.stage_goals = {1:["1","2"],
+							2:["ANGRY", "4"],
+							3:["5","6"]}
+		self.cheating = False
 
 
-
-	def start_game(self):
+	def main(self):
 		print("------------------------------------------------------------------------------------------------------")
 		print("Welcome to Angry Dice!")
 		print("------------------------------------------------------------------------------------------------------")
@@ -32,89 +29,77 @@ class Angry_dice:
 		print("\n")
 		input("press ENTER to start!")
 		print("------------------------------------------------------------------------------------------------------")
-		self.turn()
+		self.check_stage()
+		self.check_angry()
+		while self.current_stage < 4:
+			self.turn()
+		else: print("You've won! Calm down!")
+		exit()
 
 
 
-
-	def score(self):
-		current_score = self.both_die
 
 	def turn(self):
-		self.print_turn()
 
-		self.check_stage()
-
-		self.check_angry()
 		# Get Input
 		roll = input("Roll dice: ")
 
 		# Eval input
-		if self.a.currentValue == "6":
-			if 'a' not in roll:
-				self.cheat_a()
-
-		if self.b.currentValue == "6":
-			if 'b' not in roll:
-				self.cheat_b()
+		self.is_cheat(roll)
 
 		if 'a' in roll:
-			self.a.roll()
+			self.die_a.roll()
 		if 'b' in roll:
-			self.b.roll()
+			self.die_b.roll()
+
+
+		self.check_stage()
+
+		self.check_angry()
+
+		self.print_turn()
 
 
 	def print_turn(self):
 		print("------------------------------------------------------------------------------------------------------")
 		print("You rolled:")
-		print("   a = [" + str(self.a) + "]")
-		print("   b = [" + str(self.b) + "]")
+		print("   a = [" + str(self.die_a) + "]")
+		print("   b = [" + str(self.die_b) + "]")
 		print("You are in Stage " + str(self.current_stage))
 
-	def check_stage(self):
-		if self.current_stage == 1 and self.a.currentValue in self.stage_1_goal:
-			if self.b.currentValue in self.stage_1_goal:
-				if self.b.currentValue != self.a.currentValue:
-					print("You got it! Your next goal is angry and 4")
-					self.current_stage += 1
 
-		if self.current_stage == 2 and self.a.currentValue in self.stage_2_goal:
-			if self.b.currentValue in self.stage_2_goal:
-				if self.b.currentValue != self.a.currentValue:
-					print("You got it! Your next goal is 5 and 6")
-					self.current_stage  +=1
-		
-		if self.current_stage == 3 and self.a.currentValue in self.stage_3_goal:
-			if self.b.currentValue in self.stage_3_goal:
-				if self.b.currentValue != self.a.currentValue:
-					print("You've won! Calm down!")
-					exit()
+	def check_stage(self):
+		self.goals = self.stage_goals[self.current_stage]
+
+		if self.die_a.currentValue in self.goals and self.die_b.currentValue in self.goals and self.cheating == False:
+			if self.die_a.currentValue != self.die_b.currentValue:
+				self.current_stage +=1
 
 
 	def check_angry(self):
-		if self.a.currentValue == "ANGRY":
-			if self.b.currentValue == "ANGRY":
+		if self.die_a.currentValue == "ANGRY":
+			if self.die_b.currentValue == "ANGRY":
 				self.current_stage = 1
+				print("You're very angry, you need to calm down")
 
-	
 
+	def is_cheat(self, roll):
+		self.cheating = False
+		if self.die_a.currentValue == "6" and self.current_stage == 3:
+			if 'a' not in roll:
+				print("You're cheating! You cannot lock a six!")
+				self.cheating = True
 
-	def cheat_a(self):
-		print("You're cheating! You cannot lock that number!")
-		print("Rerolling for you:")
-		self.a.roll()
-
-		self.turn()
-
-	def cheat_b(self):
-		print("You're cheating! You cannot lock that number!")
-		print("Rerolling for you:")
-		self.b.roll()
-
-		self.turn()
+		if self.die_b.currentValue == "6" and self.current_stage == 3:
+			if 'b' not in roll:
+				print("You're cheating! You cannot lock a six!")
+				self.cheating = True
 
 
 
+if __name__ == '__main__':
+	test_game = Angry_dice()
+	test_game.main()
 
 
 
