@@ -21,7 +21,7 @@ class CheckForCheatingTest(unittest.TestCase):
 
         self.angry_game.is_cheat(self.angry_game.roll)
 
-        self.assertTrue(self.angry_game.is_cheat == False)
+        self.assertTrue(self.angry_game.is_cheat, True)
 
     def test_check_cheating_two_and_six(self):
         self.angry_game.die_a.currentValue = "2"
@@ -31,7 +31,7 @@ class CheckForCheatingTest(unittest.TestCase):
 
         self.angry_game.is_cheat(self.angry_game.roll)
 
-        self.assertTrue(self.angry_game.is_cheat == True)
+        self.assertTrue(self.angry_game.is_cheat, True)
 
     def test_check_cheating_two_and_five(self):
         self.angry_game.die_a.currentValue = "2"
@@ -41,7 +41,7 @@ class CheckForCheatingTest(unittest.TestCase):
 
         self.angry_game.is_cheat(self.angry_game.roll)
 
-        self.assertTrue(self.angry_game.is_cheat == False)
+        self.assertTrue(self.angry_game.is_cheat, False)
 
 if __name__ == '__main__':
     unittest.main()

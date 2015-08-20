@@ -15,17 +15,16 @@ class CheckAngryTest(unittest.TestCase):
     def tearDown(self):
         del self.angry_game
 
-    def test_check_stage_one_angry_angry(self):
-        @patch('sys.stdout', new_callable=StringIO)
+    @patch('sys.stdout', new_callable=StringIO)
+    def test_check_stage_one_angry_angry(self, mock_stdout):
         self.angry_game.die_a.currentValue = 'ANGRY'
         self.angry_game.die_b.currentValue = 'ANGRY'
         self.angry_game.current_stage = 1
-
-	    angry_text = "You're very angry, you need to calm down”
+        angry_text = "You're very angry, you need to calm down\n"
 
         self.angry_game.check_angry()
 
-        self.Equal(mock_stout.getValue(), angry_text)
+        self.assertEqual(mock_stdout.getvalue(), angry_text)
         self.assertEqual(self.angry_game.current_stage, 1)
 
     def test_check_stage_one_angry_two(self):
@@ -46,7 +45,7 @@ class CheckAngryTest(unittest.TestCase):
 
         self.assertEqual(self.angry_game.current_stage, 1)
 
-#Part two
+    # Part two
     def test_check_stage_two_angry_angry(self):
         self.angry_game.die_a.currentValue = 'ANGRY'
         self.angry_game.die_b.currentValue = 'ANGRY'
@@ -74,7 +73,7 @@ class CheckAngryTest(unittest.TestCase):
 
         self.assertEqual(self.angry_game.current_stage, 2)
 
-#Part three
+    # Part three
 
     def test_check_stage_three_angry_angry(self):
         self.angry_game.die_a.currentValue = 'ANGRY'
@@ -102,7 +101,6 @@ class CheckAngryTest(unittest.TestCase):
         self.angry_game.check_angry()
 
         self.assertEqual(self.angry_game.current_stage, 3)
-
 
 
 if __name__ == '__main__':
