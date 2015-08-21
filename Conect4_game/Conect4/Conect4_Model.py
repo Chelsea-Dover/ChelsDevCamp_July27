@@ -14,22 +14,22 @@ class Model:
 
     def make_board(self):
         """ make the initial board """
-        for row in range(6):
-            for column in range(7):
-                self.grid.append("|_")
-            self.grid.append("|\n")
-        glue = "".join(self.grid)
-        print(glue)
+        for x in range(7):
+            self.grid.append([] * 6)
+        # print(self.grid)
+        return self.grid
 
     def update_board(self):
         """ update the board based on players move """
-        pass
+        self.currentBoard = self.grid
+        self.currentBoard[0].append("x")
+        return self.currentBoard
 
     def swap_player(self):
         """ If statement that + or - based on what current_player is"""
         self.playing_player = self.players[self.current_player]
 
         if self.current_player ==  1:
-            self.current_player +=1
+            self.current_player += 1
         else:
-            self.current_player -=1
+            self.current_player -= 1
