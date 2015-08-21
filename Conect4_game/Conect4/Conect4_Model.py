@@ -12,12 +12,21 @@ class Model:
         self.current_player = 1
 
 
+    def make_board(self):
+        """ make the initial board """
+        for row in range(6):
+            for column in range(7):
+                self.grid.append("|_")
+            self.grid.append("|\n")
+        glue = "".join(self.grid)
+        print(glue)
+
     def update_board(self):
-        """ updates board based on players move"""
+        """ update the board based on players move """
         pass
 
     def swap_player(self):
-        """ If statment that + or - based on what current_player is"""
+        """ If statement that + or - based on what current_player is"""
         self.playing_player = self.players[self.current_player]
 
         if self.current_player ==  1:
