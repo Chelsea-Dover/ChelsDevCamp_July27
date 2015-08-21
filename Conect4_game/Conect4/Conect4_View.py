@@ -22,6 +22,7 @@ class View:
         # self.board = self.Model.currentBoard
         # for x in zip_longest(*self.board.split(), fillvalue=' '):
         #     print(' '.join(x))
+
         pass
 
     def show_turn(self):
