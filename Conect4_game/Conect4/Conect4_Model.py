@@ -12,22 +12,24 @@ class Model:
         self.current_player = 1
 
 
+    def make_board(self):
+        """ make the initial board """
+        for x in range(7):
+            self.grid.append([] * 6)
+        print(self.grid)
+        return self.grid
+
     def update_board(self):
-        """ updates board based on players move"""
-        pass
+        """ update the board based on players move """
+        self.currentBoard = self.make_board()
+        self.currentBoard[0].append("x")
+        # print(self.currentBoard)
 
     def swap_player(self):
-        """ If statment that + or - based on what current_player is"""
+        """ If statement that + or sed on - bawhat current_player is"""
         self.playing_player = self.players[self.current_player]
 
         if self.current_player ==  1:
-            self.current_player +=1
+            self.current_player += 1
         else:
-            self.current_player -=1
-
-    def testing_1_2_3(self):
-        self.n_cols = int(self.n_cols)
-        self.fn_rows = int(self.n_rows)
-
-        self.matrix = [[0 for x in range(self.n_cols)] for y in range(self.n_rows)]
-        print(self.matrix)  #for testing purposes
+            self.current_player -= 1

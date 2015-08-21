@@ -1,7 +1,11 @@
-__author__ = 'Chelsea'
+__author__ = 'Chelsea | Michael'
 
 import unittest
+<<<<<<< HEAD
 from itertools import zip_longest
+=======
+from Conect4_Model import Model
+>>>>>>> 6c9fc9b001a3cb6c7bec876019214d448dc19c6e
 
 
 class TestModelMakeBoard(unittest.TestCase):
@@ -10,12 +14,16 @@ class TestModelMakeBoard(unittest.TestCase):
     def setUp(self):
         """Inits empty grid for testing"""
         self.grid = []
+        self.test_grid = Model()
 
+    def tearDown(self):
+        """ Closes the model """
+        del self.test_grid
 
     def test_print_empty_list(self):
         """makes sure grid is empty"""
 
-        self.assertEqual(0, len(self.grid), "len_should_be_zero")
+        self.assertEqual(0, len(self.test_grid.grid), "len_should_be_zero")
 
     def test_append_item_to_list(self):
         """Append item to grid. Test grid length"""
@@ -23,7 +31,21 @@ class TestModelMakeBoard(unittest.TestCase):
 
         self.assertEqual(1, len(self.grid))
 
-    def update_board(self):
+    def test_make_row(self):
+        """Appends whole row to grid"""
+        for row in range(7):
+            self.grid.append("_")
+
+        res = "|".join(self.grid)
+
+        #print(res)
+
+        self.assertEqual(7, len(self.grid))
+
+    def test_make_board(self):
+        """Appends whole board to grid"""
+        # self.test_grid.make_board()
+        # self.assertEqual(48, len(self.test_grid.grid))
 
 if __name__ == '__main__':
     unittest.main()

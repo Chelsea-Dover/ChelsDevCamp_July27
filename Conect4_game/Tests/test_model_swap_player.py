@@ -1,4 +1,4 @@
-__author__ = 'Chelsea'
+__author__ = 'Chelsea | Michael'
 
 import unittest
 from Conect4_Model import Model
@@ -12,6 +12,7 @@ class TestModelSwapPlayer(unittest.TestCase):
         self.test_function = Model()
 
     def tearDown(self):
+        """ Closes the model """
         del self.test_function
 
     def test_change_to_player_a(self):
