@@ -21,9 +21,9 @@ class Model:
 
     def update_board(self):
         """ update the board based on players move """
-        self.currentBoard = self.grid
+        self.currentBoard = self.make_board()
         self.currentBoard[0].append("x")
-        return self.currentBoard
+        print(self.currentBoard)
 
     def swap_player(self):
         """ If statement that + or - based on what current_player is"""
