@@ -1,11 +1,7 @@
 __author__ = 'Chelsea | Michael'
 
 import unittest
-<<<<<<< HEAD
-from itertools import zip_longest
-=======
 from Conect4_Model import Model
->>>>>>> 6c9fc9b001a3cb6c7bec876019214d448dc19c6e
 
 
 class TestModelMakeBoard(unittest.TestCase):

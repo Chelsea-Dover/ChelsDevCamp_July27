@@ -15,15 +15,15 @@ class Model:
     def make_board(self):
         """ make the initial board """
         for x in range(7):
-            self.grid.append([] * 6)
-        print(self.grid)
+            self.grid.append([""] * 6)
+       # print(self.grid)
         return self.grid
 
     def update_board(self):
         """ update the board based on players move """
         self.currentBoard = self.make_board()
-        self.currentBoard[0].append("x")
-        # print(self.currentBoard)
+        self.currentBoard[0][0]="x"
+        print(self.currentBoard)
 
     def swap_player(self):
         """ If statement that + or sed on - bawhat current_player is"""
