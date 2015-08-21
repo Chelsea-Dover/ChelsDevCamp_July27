@@ -24,3 +24,10 @@ class Model:
             self.current_player +=1
         else:
             self.current_player -=1
+
+    def testing_1_2_3(self):
+        self.n_cols = int(self.n_cols)
+        self.fn_rows = int(self.n_rows)
+
+        self.matrix = [[0 for x in range(self.n_cols)] for y in range(self.n_rows)]
+        print(self.matrix)  #for testing purposes

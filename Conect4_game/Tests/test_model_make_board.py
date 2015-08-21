@@ -1,6 +1,7 @@
 __author__ = 'Chelsea'
 
 import unittest
+from itertools import zip_longest
 
 
 class TestModelMakeBoard(unittest.TestCase):
@@ -22,29 +23,7 @@ class TestModelMakeBoard(unittest.TestCase):
 
         self.assertEqual(1, len(self.grid))
 
-    def test_make_row(self):
-        """Appends whole row to grid"""
-        for row in range(7):
-            self.grid.append("_")
-
-        res = "|".join(self.grid)
-
-        #print(res)
-
-        self.assertEqual(7, len(self.grid))
-
-    def test_make_board(self):
-        """Appends whole board to grid"""
-
-        for row in range(6):
-            for collum in range(7):
-                self.grid.append("|_")
-            self.grid.append("|\n")
-        res = "".join(self.grid)
-
-        print(res)
-
-        self.assertEqual(48, len(self.grid))
+    def update_board(self):
 
 if __name__ == '__main__':
     unittest.main()
