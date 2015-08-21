@@ -38,11 +38,11 @@ class TestModelMakeBoard(unittest.TestCase):
 
         for row in range(6):
             for collum in range(7):
-                self.grid.append("|_|")
-            self.grid.append("\n")
+                self.grid.append("|_")
+            self.grid.append("|\n")
         res = "".join(self.grid)
 
-        #print(res)
+        print(res)
 
         self.assertEqual(48, len(self.grid))
 

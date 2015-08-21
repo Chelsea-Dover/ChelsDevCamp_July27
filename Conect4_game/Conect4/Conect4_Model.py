@@ -8,7 +8,7 @@ class Model:
     def __init__(self):
         """This init's the class"""
         self.grid = []
-        self.players = {1:["Player_a", "red"], 2:["Player_b", "yellow"]}
+        self.players = {1: ["Player_a", "x"], 2: ["Player_b", "o"]}
         self.current_player = 1
 
 
@@ -18,5 +18,9 @@ class Model:
 
     def swap_player(self):
         """ If statment that + or - based on what current_player is"""
-        self.players_value = self.self.current_player[self.players]
-        pass
+        self.playing_player = self.players[self.current_player]
+
+        if self.current_player ==  1:
+            self.current_player +=1
+        else:
+            self.current_player -=1
