@@ -1,4 +1,6 @@
 """ Displays data for interaction with user"""
+from Conect4_Model import Model
+from itertools import zip_longest
 
 class View:
     """ THis is how the game is presented to the player"""
@@ -8,11 +10,18 @@ class View:
         pass
 
     def starting_print(self):
-        """Print's rules"""
-        pass
+        """Print's rules """
+        text = "Choose a column to drop your color checker."
+        text += "Take turns for each move."
+        text += "The object of the game is to get four of your color"
+        text += "checkers either vertically, horizontally, or diagonally."
+        print(text)
 
     def show_board(self):
         """Print's the current board"""
+        # self.board = self.Model.currentBoard
+        # for x in zip_longest(*self.board.split(), fillvalue=' '):
+        #     print(' '.join(x))
         pass
 
     def show_turn(self):
