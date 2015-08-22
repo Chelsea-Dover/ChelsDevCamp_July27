@@ -23,7 +23,8 @@ class Model:
         """ update the board based on players move """
         self.currentBoard = self.make_board()
         self.currentBoard[0][0]="x"
-        print(self.currentBoard)
+        #print(self.currentBoard)
+        return self.currentBoard
 
     def swap_player(self):
         """ If statement that + or sed on - bawhat current_player is"""

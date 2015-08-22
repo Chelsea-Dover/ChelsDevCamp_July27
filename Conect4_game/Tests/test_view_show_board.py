@@ -25,6 +25,7 @@ class TestModelShowBoard(unittest.TestCase):
     #     self.assertEqual(mock_stdout.getvalue(), currentBoard)
     #     # self.assertEqual(self.angry_game.current_stage, 1)
 
+
     def test_show_the_board(self):
         """ visually represent the grid as a connect 4 game """
         self.theView.show_board()

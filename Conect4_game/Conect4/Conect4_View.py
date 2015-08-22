@@ -7,7 +7,8 @@ class View:
 
     def __init__(self):
         """Init's view"""
-        pass
+        self.test = Model()
+
 
     def starting_print(self):
         """Print's rules """
@@ -22,8 +23,13 @@ class View:
         # self.board = self.Model.currentBoard
         # for x in zip_longest(*self.board.split(), fillvalue=' '):
         #     print(' '.join(x))
+        print(self.test.update_board())
+        for each_column in self.test.currentBoard:
+            each_column.append("\n")
+            print(self.test.update_board())
 
-        pass
+
+
 
     def show_turn(self):
         """Print's the turn and asks for input"""

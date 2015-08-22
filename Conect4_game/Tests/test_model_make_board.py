@@ -26,22 +26,23 @@ class TestModelMakeBoard(unittest.TestCase):
         self.grid.append("x")
 
         self.assertEqual(1, len(self.grid))
-
-    def test_make_row(self):
-        """Appends whole row to grid"""
-        for row in range(7):
-            self.grid.append("_")
-
-        res = "|".join(self.grid)
-
-        #print(res)
-
-        self.assertEqual(7, len(self.grid))
+    #
+    # def test_make_row(self):
+    #     """Appends whole row to grid"""
+    #     for row in range(7):
+    #         self.grid.append("_")
+    #
+    #     res = "|".join(self.grid)
+    #
+    #     #print(res)
+    #
+    #     self.assertEqual(7, len(self.grid))
 
     def test_make_board(self):
         """Appends whole board to grid"""
-        # self.test_grid.make_board()
-        # self.assertEqual(48, len(self.test_grid.grid))
+        self.test_grid.make_board()
+
+        self.assertEqual(48, len(self.test_grid.grid))
 
 if __name__ == '__main__':
     unittest.main()
