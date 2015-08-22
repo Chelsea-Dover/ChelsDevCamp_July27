@@ -10,21 +10,24 @@ class Model:
         self.grid = []
         self.players = {1: ["Player_a", "x"], 2: ["Player_b", "o"]}
         self.current_player = 1
+        self.new_board = self.update_board()
+        print(self.new_board)
 
 
     def make_board(self):
         """ make the initial board """
         for x in range(7):
-            self.grid.append([""] * 6)
-       # print(self.grid)
+            self.grid.append([] * 6)
+        print(self.grid)
         return self.grid
+        print(self.grid)
 
-    def update_board(self):
+    def update_board(self, current_play):
         """ update the board based on players move """
-        self.currentBoard = self.make_board()
-        self.currentBoard[0][0]="x"
-        #print(self.currentBoard)
-        return self.currentBoard
+        self.test = self.make_board()
+        self.test[0][0]="x"
+        print(self.grid)
+        return self.grid
 
     def swap_player(self):
         """ If statement that + or sed on - bawhat current_player is"""
