@@ -17,6 +17,19 @@ class TestModelShowBoard(unittest.TestCase):
         """ Closes the view """
         del self.theView
 
+    @patch('sys.stout', new_callable=StringIO)
+    def show_board(self):
+
+        mock_board = """
+                        |_|_|_|_|_|_|_|
+	                    |_|_|o|_|_|_|_|
+	                    |o|_|o|x|_|_|_|
+                        |x|o|o|x|_|_|_|
+	                    |o|x|x|o|_|_|_|
+	                    """
+
+        self.assertEqual(mock_stdout.getvalue(), mock_board)
+
     # @patch('sys.stdout', new_callable=StringIO)
     # def show_the_board(self, mock_stdout):
     #     """ visually represent the grid as a connect 4 game """
