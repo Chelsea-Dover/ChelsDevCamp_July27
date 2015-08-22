@@ -1,5 +1,4 @@
 """ Displays data for interaction with user"""
-from Conect4_Model import Model
 from itertools import zip_longest
 
 class View:
@@ -7,7 +6,6 @@ class View:
 
     def __init__(self):
         """Init's view"""
-        self.test = Model()
 
 
     def starting_print(self):
@@ -23,17 +21,31 @@ class View:
         # self.board = self.Model.currentBoard
         # for x in zip_longest(*self.board.split(), fillvalue=' '):
         #     print(' '.join(x))
-        print(self.test.update_board())
-        for each_column in self.test.currentBoard:
-            each_column.append("\n")
-            print(self.test.update_board())
+        #print(self.test.update_board())
+        # for each_column in self.test.:
+        #     "\n".join(each_column)
+        #     return self.test.currentBoard
+        #
+        # print(self.test.)
+        pass
+
+
+    #     """Appends whole row to grid"""
+    #     for row in range(7):
+    #         self.grid.append("_")
+    #
+    #     res = "|".join(self.grid)
+    #
+    #     #print(res)
 
 
 
 
     def show_turn(self):
         """Print's the turn and asks for input"""
-        pass
+        self.current_play = int(input("pick a collum"))
+        self.current_play -=1
+
 
     def show_invalid(self):
         """Print's if players input id invalid"""
