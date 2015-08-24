@@ -6,6 +6,8 @@ class View:
 
     def __init__(self):
         """Init's view"""
+        self.outcome = ""
+        self.adjustment = -1
 
 
     def starting_print(self):
@@ -16,18 +18,26 @@ class View:
         text += "checkers either vertically, horizontally, or diagonally."
         print(text)
 
+
     def show_board(self):
-        """Print's the current board"""
-        # self.board = self.Model.currentBoard
-        # for x in zip_longest(*self.board.split(), fillvalue=' '):
-        #     print(' '.join(x))
-        #print(self.test.update_board())
-        # for each_column in self.test.:
-        #     "\n".join(each_column)
-        #     return self.test.currentBoard
-        #
-        # print(self.test.)
-        pass
+        """Prints the board to the users"""
+        print()
+        #prints it with an empty space
+        print(' ', end='')
+        print(' '.join(map(str, 1, self.column +1)))
+        # for x in range(1, self.column + 1):
+        #     print("{}".format(x), end='')
+        print()
+
+        print('-----' + ('----' * (self.column - 1)))
+
+        for y in range(self.row):
+
+            print('|', end='')
+            for x in range(self.row):
+                print(' %s |' % self.grid[x][y], end='')
+            print()
+            print('-----' + ('----' * (self.column - 1)))
 
 
     #     """Appends whole row to grid"""
@@ -41,17 +51,37 @@ class View:
 
 
 
-    def show_turn(self):
+    def show_turn(self, playing_player):
         """Print's the turn and asks for input"""
-        self.current_play = int(input("pick a collum"))
-        self.current_play -=1
 
+        inputNeeded = True
+        players_move = 0
+        while inputNeeded:
+            # Prompt the user for their move
+            players_move = input("Your turn, {}. What Column do you want to put your checker? (Please put in 1-7)"
+                  .format(playing_player[0]))
 
-    def show_invalid(self):
-        """Print's if players input id invalid"""
+            # Make sure that they give an int, and convert it to an int
+            try:
+                conversion = int(players_move)
+            except ValueError:
+                conversion = 8
+                print("That's not a valid input.")
+
+            # Check that it's in the range of 1-7
+            if conversion not in range(1, 7):
+                print("There is no column by that name.")
+            else:
+                inputNeeded = False
+                players_move = conversion -1
+
+        # Return the player's move choice
+        return players_move
 
     def show_winner(self):
         """Print's if four in a row."""
+        print(self.outcome)
 
     def show_tie(self):
         """Print's if no more spaces on board"""
+        print(self.outcome)

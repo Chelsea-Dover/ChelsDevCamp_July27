@@ -9,19 +9,71 @@ class TestModelUpdateBoard(unittest.TestCase):
     def setUp(self):
         """ Init's current player and players"""
         self.model = Model()
-        self.model.grid = []
 
     def tearDown(self):
         """ Closes the model """
         del self.model
 
-    def test_update_board_first_list_append_0(self):
-        """ take input from user and change index on board """
+    def test_userinput_changes_board(self):
 
-        self.player_input = "1"
+        self.model.update_board(5)
 
-        self.model.update_board()
-        self.assertEqual(self.model.test[int(self.player_input)][0], "x")
+        mock_board = [
+        [" "] * 6,
+        [" "] * 6,
+        [" "] * 6,
+        [" "] * 6,
+        [" "] * 6,
+        [" "] * 5 + ["\u25CF"],
+        [" "] * 6
+        ]
+
+        self.assertEqual(self.model.grid, mock_board, "Column did not update")
+
+    def test_userinput_changes_board(self):
+
+        self.model.grid = [
+        [" "] * 6,
+        [" "] * 6,
+        [" "] * 6,
+        [" "] * 6,
+        [" "] * 6,
+        ["\u25CF"] * 6,
+        [" "] * 6
+        ]
+
+        column_full = self.model.update_board(5)
+
+
+        self.assertTrue(column_full, "Board said column was not full")
+
+    def test_userinput_changes_board(self):
+
+        self.model.grid = [
+        [" "] * 6,
+        [" "] * 6,
+        [" "] * 6,
+        [" "] * 6,
+        [" "] * 6,
+        [" "] * 3 + ["\u25CF"] * 3,
+        [" "] * 6
+        ]
+
+        column_full = self.model.update_board(5)
+
+        mock_board = [
+        [" "] * 6,
+        [" "] * 6,
+        [" "] * 6,
+        [" "] * 6,
+        [" "] * 6,
+        [" "] * 2 + ["\u25CF"] * 4,
+        [" "] * 6
+        ]
+
+        self.assertFalse(column_full, "Board said column was full")
+        self.assertEqual(self.model.grid, mock_board, "Column did not update")
+
 
 
 if __name__ == '__main__':

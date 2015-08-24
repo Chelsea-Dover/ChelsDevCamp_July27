@@ -17,5 +17,26 @@ class TestModelShowTurn(unittest.TestCase):
         """ Closes the view """
         del self.theView
 
-    def test_show_turn_player_a(self):
-        pass
+    @patch('builtins.input', return_value='2')
+    def test_show_turn_player_a(self, input_value):
+        move = self.theView.show_turn(["Player_A"])
+
+        self.assertEqual(move, 1)
+
+    @patch('builtins.input', side_effect=['a','2'])
+    def test_show_turn_player_a(self, input_value):
+        move = self.theView.show_turn(["Player_A"])
+
+        self.assertEqual(move, 1)
+
+    @patch('builtins.input', side_effect=['','2'])
+    def test_show_turn_player_a(self, input_value):
+        move = self.theView.show_turn(["Player_A"])
+
+        self.assertEqual(move, 1)
+
+    @patch('builtins.input', side_effect=['9','2'])
+    def test_show_turn_player_a(self, input_value):
+        move = self.theView.show_turn(["Player_A"])
+
+        self.assertEqual(move, 1)
