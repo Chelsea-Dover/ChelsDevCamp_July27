@@ -33,11 +33,11 @@ class Controller:
 
 
     def check_tie(self):
+        """ Loops through the board and looks for a empty space. If it does find a space it print's that it was a tie
+        and exits"""
         for x in self.board: # loop through each inner list
-            print("Hello?")
             for each_index in x: # loop through each index of inner lists
                 if each_index[0] == " ":
-                    print("TEST")
                 else:
                     self.view.show_tie()
                     print("If there anybody home?")
@@ -49,10 +49,6 @@ class Controller:
         for x in self.board:
             for each_index in x:
                 pass
-
-
-    #def check_valid(self):
-     #   """ Checks if input is valid"""
 
     def main(self):
         """ Starts game and calls all helper functions"""
