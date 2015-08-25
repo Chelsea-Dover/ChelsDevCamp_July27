@@ -18,28 +18,27 @@ class TestViewShowBoard(unittest.TestCase):
         del self.theView
 
     @patch('sys.stdout', new_callable=StringIO)
-    def show_the_board(self, mock_stdout):
+    def test_show_the_board(self, mock_stdout):
         """visually represent the grid as a connect 4 game """
-         currentBoard =
- 1234567
------------------------------
-|   |   |   |   |   |   |   |
------------------------------
-|   |   |   |   |   |   |   |
------------------------------
-|   |   |   |   |   |   |   |
------------------------------
-|   |   |   |   |   |   |   |
------------------------------
-|   |   |   |   |   |   |   |
------------------------------
-|   |   |   |   |   |   |   |
------------------------------
+        # first_row = "  1   2   3   4   5   6   7"
+        currentBoard =\
+            "                    "\
+            "                    "\
+            "                    "\
+            "                    "\
+            "                    "\
+            "                    "\
+            "--------------------"\
+            "1  2  3  4  5  6  7 \n"
+
+        self.theView.show_board([[" "] * 6 for x in range(7)])
 
         self.assertEqual(mock_stdout.getvalue(), currentBoard)
-        # self.assertEqual(self.angry_game.current_stage, 1)
 
+    @patch('sys.stdout', new_callable=StringIO)
+    def show_one_row_in_board(self, mock_stdout):
+        pass
 
-   def test_show_the_board(self):
-       """ visually represent the grid as a connect 4 game """
-       self.theView.show_board()
+    #def test_show_the_board(self):
+     #  """ visually represent the grid as a connect 4 game """
+     #  self.theView.show_board()

@@ -12,29 +12,30 @@ class Model:
         self.playing_player = self.players[1]
         self.row = 6
         self.column = 7
-        self.grid = [[" "] * self.row for x in range(self.column)]
-        #For testing v
-        # print(self.grid)
-        #For testing ^
-    #
+        self.grid = [[" "] * 6 for x in range(7)]
+
     def update_board(self, selection):
         """ update the board based on players move """
-        conversion = int(selection)
+
         new_move = self.grid[selection]
 
+        # check if column selected by player is full if the first index (top) has a game piece
         if new_move[0] != " " :
             return True
 
+        # subtract player column selection by 1 to select correct column
         adjustment = -1
         while new_move[adjustment] != " ":
             adjustment -= 1
 
+        # update the grid with the selected column by the player
         new_move[adjustment] = self.playing_player[1]
         return False
 
     def swap_player(self):
         """ If statement that + or sed on - bawhat current_player is"""
 
+        # if player 1 then switch to player 2
         if self.current_player ==  1:
             self.current_player += 1
         else:

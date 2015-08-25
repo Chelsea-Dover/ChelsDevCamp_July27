@@ -14,31 +14,42 @@ class Controller:
         self.view = View()
         self.model = Model()
         self.board = self.model.grid
-        self.valid = self.model.isValidMove
 
 
     def get_board_status(self):
         """ Takes input from grid and updates view"""
-        #self.model.updateboard
-        pass
+        self.board = self.model.grid
+        self.view.show_board(board)
+
 
     def get_move(self):
+        """Get's the inout from the view and puts it into model"""
         move_needed = True
 
         while move_needed:
-            """Takes input from view and updates grid"""
             move = self.view.show_turn()
 
             move_needed = self.model.update_board(move)
 
 
     def check_tie(self):
-        """ see's if grid is full"""
-        pass
+        for x in self.board: # loop through each inner list
+            print("Hello?")
+            for each_index in x: # loop through each index of inner lists
+                if each_index[0] == " ":
+                    print("TEST")
+                else:
+                    self.view.show_tie()
+                    print("If there anybody home?")
+                    exit()
+
 
     def check_winner(self):
         """ Checks to see if four in a row"""
-        pass
+        for x in self.board:
+            for each_index in x:
+                pass
+
 
     #def check_valid(self):
      #   """ Checks if input is valid"""

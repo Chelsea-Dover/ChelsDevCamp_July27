@@ -19,26 +19,43 @@ class View:
         print(text)
 
 
-    def show_board(self):
+    def show_board(self, board):
+        # print()
+        # print(' ', end='')
+        # for x in range(1, 8):
+        #     print(' %s  ' % x, end='')
+        # print()
+        #
+        # print('-----' + ('----' * (6)))
+        #
+        # for y in range(7):
+        #
+        #     print('|', end='')
+        #     for x in range(6):
+        #         print(' {} |'.format(board[x][y]), end='')
+        #     print()
+        #
+        #     print('-----' + ('----' * (6)))
         """Prints the board to the users"""
-        print()
         #prints it with an empty space
-        print(' ', end='')
-        print(' '.join(map(str, 1, self.column +1)))
-        # for x in range(1, self.column + 1):
-        #     print("{}".format(x), end='')
-        print()
+        #print(' ', end='')
+       # print("  1   2   3   4   5   6   7")
+        #for x in range(1, 7):
+        #     print("  {}".format(x), end='')
+        #print()
 
-        print('-----' + ('----' * (self.column - 1)))
+        # print('-----' + ('----' * (6)))
+        #
+        # for y in range(6):
+        #    print('|', end='')
+        #    for x in range(7):
+        #        print(' %s |' % board[x][y], end='')
+        #    print('-----' + ('----' * (6)))
 
-        for y in range(self.row):
-
-            print('|', end='')
-            for x in range(self.row):
-                print(' %s |' % self.grid[x][y], end='')
-            print()
-            print('-----' + ('----' * (self.column - 1)))
-
+        for col in range(6):
+            print('  '.join(str(board[row][col]) for row in range(7)))
+        print('--------------------')
+        print('  '.join(map(str, range(1, 8))))
 
     #     """Appends whole row to grid"""
     #     for row in range(7):
@@ -47,8 +64,6 @@ class View:
     #     res = "|".join(self.grid)
     #
     #     #print(res)
-
-
 
 
     def show_turn(self, playing_player):
@@ -84,4 +99,4 @@ class View:
 
     def show_tie(self):
         """Print's if no more spaces on board"""
-        print(self.outcome)
+        print("Yay! It's a tie! (^-^)")

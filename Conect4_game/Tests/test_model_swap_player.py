@@ -18,17 +18,13 @@ class TestModelSwapPlayer(unittest.TestCase):
     def test_change_to_player_a(self):
         """Testing if current player 1 gets self.players 1 values"""
         self.test_function.current_player = 1
-
         self.test_function.swap_player()
-
         self.assertEqual(self.test_function.current_player, 2)
 
     def test_change_to_player_b(self):
         """Testing if the current player is 2 get self.player 2 value"""
         self.test_function.current_player = 2
-
         self.test_function.swap_player()
-
         self.assertEqual(self.test_function.current_player, 1)
 
 
