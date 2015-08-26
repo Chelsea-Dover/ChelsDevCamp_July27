@@ -1,4 +1,5 @@
-""" Displays data for interaction with user"""
+""" The View displays data for interaction with user """
+
 from itertools import zip_longest
 
 class View:
@@ -9,7 +10,6 @@ class View:
         self.outcome = ""
         self.adjustment = -1
 
-
     def starting_print(self):
         """Print's rules """
         text = "Choose a column to drop your color checker."
@@ -18,22 +18,22 @@ class View:
         text += "checkers either vertically, horizontally, or diagonally."
         print(text)
 
-
     def show_board(self, board):
-
+        """Show the current board """
+        print()
+        print(" 1 2 3 4 5 6 7")
         for each_row in range(6):
              print("|", "|".join(column[each_row] for column in board), "|",sep='')
         print("---------------")
-        print(" 1 2 3 4 5 6 7")
+        print(" ^           ^ ")
 
     def show_turn(self, playing_player):
         """Print's the turn and asks for input"""
-
         inputNeeded = True
         players_move = 0
         while inputNeeded:
             # Prompt the user for their move
-            players_move = input("Your turn, {}. What Column do you want to put your checker? (Please put in 1-7)"
+            players_move = input("Your turn, {}. What Column do you want to put your checker? (Please put in 1-7):  "
                   .format(playing_player[0]))
 
             # Make sure that they give an int, and convert it to an int
@@ -41,11 +41,11 @@ class View:
                 conversion = int(players_move)
             except ValueError:
                 conversion = 8
-                print("That's not a valid input.")
+                print("That's not a valid input. ")
 
             # Check that it's in the range of 1-7
-            if conversion not in range(1, 7):
-                print("There is no column by that name.")
+            if conversion not in range(1, 8):
+                print("There is no column by that name. ")
             else:
                 inputNeeded = False
                 players_move = conversion -1

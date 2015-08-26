@@ -1,6 +1,4 @@
-"""
-Model holds all the data. So it will hold the grid, and the players
-"""
+""" Model holds all the data. So it will hold the grid, and the players """
 
 class Model:
     """ This class will hold the grid(list) and the players(Dict of lists)"""
@@ -14,20 +12,20 @@ class Model:
         self.column = 7
         self.grid = [[" "] * 6 for x in range(7)]
 
-    def update_board(self, selection):
+    def update_board(self, move):
         """ update the board based on players move """
-
-        new_move = self.grid[selection]
+        #new_move equals the gird with selection(Which is the players input)
+        new_move = self.grid[move]
 
         # check if column selected by player is full if the first index (top) has a game piece
         if new_move[0] != " " :
             return True
 
+        # this will get the correct column and add the player's move
         # subtract player column selection by 1 to select correct column
         adjustment = -1
         while new_move[adjustment] != " ":
             adjustment -= 1
-
 
         # update the grid with the selected column by the player
         new_move[adjustment] = self.playing_player[1]
