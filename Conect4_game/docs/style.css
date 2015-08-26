@@ -1,0 +1,28 @@
+/**
+**/
+
+body{
+
+}
+table{
+    width: 95%;
+}
+
+td{
+}
+
+a{
+    text-decoration: none;
+    color: lightseagreen;
+}
+
+big + strong{
+
+}
+
+p{
+}
+
+td > tt{
+    display:none;
+}

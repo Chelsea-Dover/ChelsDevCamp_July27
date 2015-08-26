@@ -28,12 +28,13 @@ class Model:
         while new_move[adjustment] != " ":
             adjustment -= 1
 
+
         # update the grid with the selected column by the player
         new_move[adjustment] = self.playing_player[1]
         return False
 
     def swap_player(self):
-        """ If statement that + or sed on - bawhat current_player is"""
+        """ If statement that + or sed on - what current_player is"""
 
         # if player 1 then switch to player 2
         if self.current_player ==  1:

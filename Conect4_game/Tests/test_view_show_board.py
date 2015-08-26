@@ -22,14 +22,14 @@ class TestViewShowBoard(unittest.TestCase):
         """visually represent the grid as a connect 4 game """
         # first_row = "  1   2   3   4   5   6   7"
         currentBoard =\
-            "                    "\
-            "                    "\
-            "                    "\
-            "                    "\
-            "                    "\
-            "                    "\
-            "--------------------"\
-            "1  2  3  4  5  6  7 \n"
+        "| | | | | | | |\n"\
+        "| | | | | | | |\n"\
+        "| | | | | | | |\n"\
+        "| | | | | | | |\n"\
+        "| | | | | | | |\n"\
+        "| | | | | | | |\n"\
+        "---------------\n"\
+        " 1 2 3 4 5 6 7\n"\
 
         self.theView.show_board([[" "] * 6 for x in range(7)])
 

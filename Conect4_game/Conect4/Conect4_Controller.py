@@ -1,7 +1,7 @@
 """ Controller is the one class to rule them all! It's responsible for the comunication of model and view"""
 from Conect4_View import View
 from Conect4_Model import Model
-import time
+from itertools import product
 
 class Controller:
     """ Creates logic for comunication model and view"""
@@ -11,6 +11,7 @@ class Controller:
         # self.current_board = self.something_model.make_board()
         # print(self.current_board)
         #self.current_move = self.View.current_play
+        self.winner = False
         self.view = View()
         self.model = Model()
         self.board = self.model.grid
@@ -19,7 +20,7 @@ class Controller:
     def get_board_status(self):
         """ Takes input from grid and updates view"""
         self.board = self.model.grid
-        self.view.show_board(board)
+        self.view.show_board(self.board)
 
 
     def get_move(self):
@@ -27,7 +28,7 @@ class Controller:
         move_needed = True
 
         while move_needed:
-            move = self.view.show_turn()
+            move = self.view.show_turn(self.model.playing_player)
 
             move_needed = self.model.update_board(move)
 
@@ -36,24 +37,42 @@ class Controller:
         """ Loops through the board and looks for a empty space. If it does find a space it print's that it was a tie
         and exits"""
         for x in self.board: # loop through each inner list
-            for each_index in x: # loop through each index of inner lists
-                if each_index[0] == " ":
-                else:
-                    self.view.show_tie()
-                    print("If there anybody home?")
-                    exit()
+            if x[0] == " ":
+                return
+        self.view.show_tie()
+        return True
 
 
     def check_winner(self):
-        """ Checks to see if four in a row"""
+        """ Checks to see if four in a column"""
         for x in self.board:
-            for each_index in x:
-                pass
+            if self.model.playing_player[1] * 4 in "".join(x):
+                return True
+
+        for each_row in range(6):
+            if self.model.playing_player[1] * 4 in "".join(column[each_row] for column in self.board):
+                return True
+
+        for row, column in product(range(5,2, -1), range(4)):
+            if self.model.playing_player[1] * 4 in "".join(self.board[column + i][row - i] for i in range(4)):
+                return True
+
+        for row, column in product(range(3), range(4)):
+            if self.model.playing_player[1] * 4 in "".join(self.board[column + i][row + i] for i in range(4)):
+                return True
+
 
     def main(self):
         """ Starts game and calls all helper functions"""
-        self.model.make_board()
-        print(self.model.grid)
-        self.get_move()
-        print(self.board)
+        winner = False
+        self.view.starting_print()
+        while winner == False:
+            self.view.show_board(self.board)
+            self.get_move()
+            winner = self.check_winner()
+            winner = self.check_tie()
+            self.model.swap_player()
 
+if __name__ == '__main__':
+    game = Controller()
+    game.main()

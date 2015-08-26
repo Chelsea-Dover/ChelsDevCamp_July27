@@ -2,10 +2,10 @@ __author__ = 'Chelsea'
 
 import unittest
 from unittest.mock import patch
+from Conect4_Controller import Controller
 from io import StringIO
 
 class check_if_winner_wins(unittest.TestCase):
-    @patch('sys.stdout', new_callable=StringIO)
 
     def setUp(self):
         """Inits empty grid for testing"""
@@ -15,9 +15,9 @@ class check_if_winner_wins(unittest.TestCase):
         """ Closes the view """
         del self.controller
 
-    def test_if_winner(self, ):
+    def test_if_winner_column_player_a(self):
 
-        board = [
+        self.controller.board = [
         [" "] * 6,
         [" "] * 6,
         [" "] * 6,
@@ -27,11 +27,64 @@ class check_if_winner_wins(unittest.TestCase):
         [" "] * 6
         ]
 
-        winner_print = "Yay! Player_a won! (^-^)"
+        self.assertTrue(self.controller.check_winner())
 
-        four_in_a_row = self.conroller.check_winner(1)
-        self.assertEqual(winner_print, mock_stdout.getvalue())
+    def test_if_winner_column_player_b(self):
 
+        self.controller.board = [
+        [" "] * 6,
+        [" "] * 6,
+        [" "] * 6,
+        [" "] * 6,
+        [" "] * 6,
+        [" "] * 2 + ["\u25CB"] * 4,
+        [" "] * 6
+        ]
+
+        self.assertFalse(self.controller.check_winner())
+
+    def test_if_winner_row_player_b(self):
+
+        self.controller.board = [
+        [" "] * 6,
+        [" "] * 6,
+        [" "] * 6,
+        [" "] * 5 + ["\u25CF"] * 1,
+        [" "] * 5 + ["\u25CF"] * 1,
+        [" "] * 5 + ["\u25CF"] * 1,
+        [" "] * 5 + ["\u25CF"] * 1,
+        ]
+
+        self.assertTrue(self.controller.check_winner())
+
+    def test_if_winner_player_a(self):
+
+        self.controller.board = [
+        [" "] * 5 + ["\u25CF"] * 1,
+        [" "] * 4 + ["\u25CF"] * 1 + [" "] * 1,
+        [" "] * 3 + ["\u25CF"] * 1 + [" "] * 2,
+        [" "] * 2 + ["\u25CF"] * 1 + [" "] * 3,
+        [" "] * 1 + ["\u25CF"] * 1 + [" "] * 4,
+        [" "] * 6,
+        [" "] * 6
+        ]
+
+        self.assertTrue((self.controller.check_winner()))
+
+    def test_if_winner_player_a_other_way(self):
+
+        self.controller.board = [
+        [" "] * 6,
+        [" "] * 6,
+        [" "] * 1 + ["\u25CF"] * 1 + [" "] * 4,
+        [" "] * 2 + ["\u25CF"] * 1 + [" "] * 3,
+        [" "] * 3 + ["\u25CF"] * 1 + [" "] * 2,
+        [" "] * 4 + ["\u25CF"] * 1 + [" "] * 1,
+        [" "] * 5 + ["\u25CF"] * 1
+        ]
+
+
+        self.assertTrue((self.controller.check_winner()))
 
 if __name__ == '__main__':
     unittest.main()
