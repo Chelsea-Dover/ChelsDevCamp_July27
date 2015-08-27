@@ -8,9 +8,6 @@ class Controller:
 
     def __init__(self):
         """ Init's controller"""
-        # self.current_board = self.something_model.make_board()
-        # print(self.current_board)
-        #self.current_move = self.View.current_play
         self.winner = False
         self.view = View()
         self.model = Model()
