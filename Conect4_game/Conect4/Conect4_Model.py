@@ -1,5 +1,5 @@
 """
-Model holds all the data. So it will hold the grid, and the players
+The Model stores the data and the logic to allow the Controller to access the data.
 """
 
 class Model:
