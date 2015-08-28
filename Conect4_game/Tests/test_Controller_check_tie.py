@@ -7,7 +7,7 @@ from Conect4_Controller import Controller
 
 
 class TestControllerCheckTie(unittest.TestCase):
-    """ Check for a tie, full board """
+    """ Check for controller for the situation of a a tie, full board """
 
     def setUp(self):
         """Inits empty grid for testing"""

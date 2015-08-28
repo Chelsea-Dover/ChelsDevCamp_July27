@@ -7,7 +7,7 @@ from io import StringIO
 
 
 class TestModelShowTurn(unittest.TestCase):
-    """make sure it prints an empty list"""
+    """ Checks the visual aspect of the user knowing whose turn. """
 
     def setUp(self):
         """Inits empty grid for testing"""

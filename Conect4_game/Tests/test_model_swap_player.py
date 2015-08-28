@@ -5,6 +5,7 @@ from Conect4_Model import Model
 
 
 class TestModelSwapPlayer(unittest.TestCase):
+    """ Checks the model to see if the changing of the player is stored. """
 
     def setUp(self):
         """ Init's current player and players"""

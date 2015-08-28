@@ -5,7 +5,8 @@ from unittest.mock import patch
 from Conect4_Controller import Controller
 from io import StringIO
 
-class check_if_winner_wins(unittest.TestCase):
+class TestControllerCheckWinner(unittest.TestCase):
+    """ Checks the controller's logic for the situation of a win. """
 
     def setUp(self):
         """Inits empty grid for testing"""

@@ -1,7 +1,11 @@
-""" Model holds all the data. So it will hold the grid, and the players """
+"""
+Model holds all the data. So it will hold the grid, and the players
+"""
 
 class Model:
-    """ This class will hold the grid(list) and the players(Dict of lists)"""
+    """
+    This class will hold the grid(list) and the players(Dict of lists).
+    """
 
     def __init__(self):
         """This init's the class"""
@@ -13,7 +17,7 @@ class Model:
         self.grid = [[" "] * 6 for x in range(7)]
 
     def update_board(self, move):
-        """ update the board based on players move """
+        """ Update the board based on players move. """
         #new_move equals the gird with selection(Which is the players input)
         new_move = self.grid[move]
 
@@ -32,7 +36,7 @@ class Model:
         return False
 
     def swap_player(self):
-        """ If statement that + or sed on - what current_player is"""
+        """ This swaps the player from either player 1 or player 2. """
 
         # if player 1 then switch to player 2
         if self.current_player ==  1:
@@ -41,3 +45,4 @@ class Model:
             self.current_player -= 1
         self.playing_player = self.players[self.current_player]
         return self.playing_player
+

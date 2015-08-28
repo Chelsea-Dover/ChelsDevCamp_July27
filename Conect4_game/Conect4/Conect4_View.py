@@ -1,17 +1,17 @@
-""" The View displays data for interaction with user """
+""" The View displays data for interaction with user. """
 
 from itertools import zip_longest
 
 class View:
-    """ THis is how the game is presented to the player"""
+    """ This is how the game is presented to the player. """
 
     def __init__(self):
-        """Init's view"""
+        """Init's the view. """
         self.outcome = ""
         self.adjustment = -1
 
     def starting_print(self):
-        """Print's rules """
+        """ Prints the rules for the game. """
         text = "Choose a column to drop your color checker."
         text += "Take turns for each move."
         text += "The object of the game is to get four of your color"
@@ -19,7 +19,7 @@ class View:
         print(text)
 
     def show_board(self, board):
-        """Show the current board """
+        """ Displays the current board. """
         print()
         print(" 1 2 3 4 5 6 7")
         for each_row in range(6):
@@ -28,7 +28,7 @@ class View:
         print(" ^           ^ ")
 
     def show_turn(self, playing_player):
-        """Print's the turn and asks for input"""
+        """ Prints the turn and asks for input. """
         inputNeeded = True
         players_move = 0
         while inputNeeded:
@@ -54,11 +54,11 @@ class View:
         return players_move
 
     def show_winner(self, playing_player):
-        """Print's if four in a row."""
+        """Print's if four in a row exists. """
         print("Yay! {} won! (^-^)".format(playing_player))
 
     def show_tie(self):
-        """Print's if no more spaces on board"""
+        """ Print's if the board is full. """
         print("Yay! It's a tie! (^-^)")
 
 

@@ -7,7 +7,7 @@ from io import StringIO
 
 
 class TestViewShowBoard(unittest.TestCase):
-    """make sure it prints an empty list"""
+    """ Checks the visual aspect of the game for the user interface """
 
     def setUp(self):
         """Inits empty grid for testing"""

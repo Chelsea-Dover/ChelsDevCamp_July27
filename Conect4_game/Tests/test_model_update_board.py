@@ -6,6 +6,7 @@ from unittest.mock import patch
 
 
 class TestModelUpdateBoard(unittest.TestCase):
+    """ Checks the model to see if the board changes are stored. """
 
     def setUp(self):
         """ Init's current player and players"""
