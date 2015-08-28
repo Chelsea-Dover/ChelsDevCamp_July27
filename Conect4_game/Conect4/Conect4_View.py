@@ -12,10 +12,12 @@ class View:
 
     def starting_print(self):
         """ Prints the rules for the game. """
-        text = "Choose a column to drop your color checker."
-        text += "Take turns for each move."
-        text += "The object of the game is to get four of your color"
-        text += "checkers either vertically, horizontally, or diagonally."
+        text = "\nWelcome to Connect Four. The rules:"
+        text += "\nChoose a column to drop the token of your color.\n"
+        text += "Take turns for each move.\n"
+        text += "The object of the game is to get four of your color\n"
+        text += "tokens in a row either vertically, horizontally,\n"
+        text += "or diagonally before the other player. Enjoy!\n"
         print(text)
 
     def show_board(self, board):
@@ -33,7 +35,8 @@ class View:
         players_move = 0
         while inputNeeded:
             # Prompt the user for their move
-            players_move = input("Your turn, {}. What Column do you want to put your checker? (Please put in 1-7):  "
+            players_move = input("\nYour turn, {}.\n" \
+                "Choose a column 1-7: "
                   .format(playing_player[0]))
 
             # Make sure that they give an int, and convert it to an int
