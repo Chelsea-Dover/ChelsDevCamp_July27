@@ -4,6 +4,7 @@ import unittest
 from Conect4_Model import Model
 from unittest.mock import patch
 
+
 class TestModelUpdateBoard(unittest.TestCase):
 
     def setUp(self):
@@ -14,7 +15,8 @@ class TestModelUpdateBoard(unittest.TestCase):
         """ Closes the model """
         del self.model
 
-    def test_userinput_changes_board(self):
+    def test_userinput_changes_board_5pieces (self):
+        """ Test for a vertical board update index 5 and 5 pieces"""
 
         self.model.update_board(5)
 
@@ -30,7 +32,8 @@ class TestModelUpdateBoard(unittest.TestCase):
 
         self.assertEqual(self.model.grid, mock_board, "Column did not update")
 
-    def test_userinput_changes_board(self):
+    def test_userinput_changes_board_six_pieces (self):
+        """ Test for a vertical board update index 5 and six pieces """
 
         self.model.grid = [
         [" "] * 6,
@@ -43,11 +46,10 @@ class TestModelUpdateBoard(unittest.TestCase):
         ]
 
         column_full = self.model.update_board(5)
-
-
         self.assertTrue(column_full, "Board said column was not full")
 
-    def test_userinput_changes_board(self):
+    def test_userinput_changes_board_differences(self):
+        """ Test differences in the boards and full column """
 
         self.model.grid = [
         [" "] * 6,
@@ -73,7 +75,6 @@ class TestModelUpdateBoard(unittest.TestCase):
 
         self.assertFalse(column_full, "Board said column was full")
         self.assertEqual(self.model.grid, mock_board, "Column did not update")
-
 
 
 if __name__ == '__main__':

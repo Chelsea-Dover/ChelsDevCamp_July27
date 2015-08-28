@@ -16,6 +16,7 @@ class check_if_winner_wins(unittest.TestCase):
         del self.controller
 
     def test_if_winner_column_player_a(self):
+        """ Check for a vertical win player A """
 
         self.controller.board = [
         [" "] * 6,
@@ -30,6 +31,7 @@ class check_if_winner_wins(unittest.TestCase):
         self.assertTrue(self.controller.check_winner())
 
     def test_if_winner_column_player_b(self):
+        """ Check for a vertical win Player B """
 
         self.controller.board = [
         [" "] * 6,
@@ -43,7 +45,8 @@ class check_if_winner_wins(unittest.TestCase):
 
         self.assertFalse(self.controller.check_winner())
 
-    def test_if_winner_row_player_b(self):
+    def test_if_winner_row_player_A(self):
+        """ Check for a horizontal win Player A """
 
         self.controller.board = [
         [" "] * 6,
@@ -57,7 +60,8 @@ class check_if_winner_wins(unittest.TestCase):
 
         self.assertTrue(self.controller.check_winner())
 
-    def test_if_winner_player_a(self):
+    def test_if_winner_diag_player_a(self):
+        """ Check for a diagonal win Player A """
 
         self.controller.board = [
         [" "] * 5 + ["\u25CF"] * 1,
@@ -72,6 +76,7 @@ class check_if_winner_wins(unittest.TestCase):
         self.assertTrue((self.controller.check_winner()))
 
     def test_if_winner_player_a_other_way(self):
+        """ Check for other diagonal win Player A """
 
         self.controller.board = [
         [" "] * 6,
@@ -82,7 +87,6 @@ class check_if_winner_wins(unittest.TestCase):
         [" "] * 4 + ["\u25CF"] * 1 + [" "] * 1,
         [" "] * 5 + ["\u25CF"] * 1
         ]
-
 
         self.assertTrue((self.controller.check_winner()))
 

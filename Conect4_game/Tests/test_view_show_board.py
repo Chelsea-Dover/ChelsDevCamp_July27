@@ -34,7 +34,6 @@ class TestViewShowBoard(unittest.TestCase):
         " ^           ^ \n"\
 
         self.theView.show_board([[" "] * 6 for x in range(7)])
-
         self.assertEqual(mock_stdout.getvalue(), currentBoard)
 
     @patch('sys.stdout', new_callable=StringIO)
@@ -44,3 +43,7 @@ class TestViewShowBoard(unittest.TestCase):
     #def test_show_the_board(self):
      #  """ visually represent the grid as a connect 4 game """
      #  self.theView.show_board()
+
+
+if __name__ == '__main__':
+    unittest.main()
