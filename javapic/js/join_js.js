@@ -1,66 +1,47 @@
  /**
  * Created by Chelsea on 8/27/15.
  */
-//var signupInfo = document.getElementById('signup')
-//
-//function vailEmail(el){
-//    var checkFor = /[^@]+@[^@]+/.test(el.value);
-//    if (valid) {
-//
-//        console.log('signup')
-//    }
-//    return valid;
-//}
-//var signupInfo = document.getElementById('signup');
-//
-//function checkifValidEmail(email) {
-//
-//    for (var i=0; i < signupInfo.length; i++) {
-//        var re = /\S+@\S+\.\S+/;
-//        return re.test(email);
-//    }
-//}
-function validateRequired(el) {
-     if ( isRequired(el)) {
-         var valid = !isEmpty(el);
-         if (!valid) {
-             setErrorMessage(el, 'Field is required');
-         }
-         return valid;
-     }
-     return true
- }
 
 
-(function () {
-    document.forms.register.noValidate = true;
-    ('form').on('submit', function(e) {
-        var elements = this.elements;
-        var valid = {};
-        var isValid;
-        var isFormValid;
+//var test = document.valueOf(email);
+//var test = regex.test(email)
+//var valid = validInput.test(email);
 
-        for (var i=0; i < elements.length; i++) {
+//console.log(email);
+//console.log(email.valid);
+//console.log(test);
 
-            isValid = validateRequired(elements[i]) && validateTypes(elements[i]);
-            if (!isValid) {
-                showErrorMessage(elements[i]);
+var form = document.getElementById("signup");
+var inputs = document.getElementsByTagName("input");
+var name = document.querySelector('[name=name]');
+
+function checkIfValid(event) {
+    event.preventDefault();
+    for (var i = 0; i < inputs.length; i++) {
+// Looping through the array of inputs
+        if (inputs[i].type == 'email') {
+            // If while looping it finds a type called 'email'
+            var validInput = /[^@]+@[^@.].+/.test(inputs[i].value);
+            //Making a var that tests to see if the email is what we want and returns true of false
+            if (!validInput) {
+                invalidInput(event);
+                // If validinput returns a false
+                console.log(inputs[i]);
+                // Printing for testing
+                //calling the function invalidInput
             } else {
-                removeErrorMessage(elements[i]);
+                sessionStorage.setItem('name', inputs[0].value);
+                //var test = sessionStorage.getItem('test');
+                document.location.href = 'http://localhost:63342/tiffany_devCamp/gallery.html'
             }
-            valid[elements[i].id] = isValid;
         }
+    }
+}
 
-        for (var field in valid) {
-            if (!valid[field]) {
-                isFormValid = false;
-                break;
 
-            }
-            isFormValid = false
-        }
-        if (!isFormValid) {
-            e.preventDefault();
-        }
-    })
-});
+
+
+function invalidInput(event) {
+    event.preventDefault(alert("That is not a valid input. Please try again."));}
+
+form.addEventListener('submit', checkIfValid, false);
