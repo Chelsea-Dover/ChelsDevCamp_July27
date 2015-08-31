@@ -17,13 +17,12 @@ function checkIfValid(event) {
             if (!validInput) {
                 invalidInput(event);
                 // If validinput returns a false
-                console.log(inputs[i]);
-                // Printing for testing
                 //calling the function invalidInput
             } else {
                 sessionStorage.setItem('name', inputs[0].value);
-                //var test = sessionStorage.getItem('test');
-                document.location.href = 'http://localhost:63342/tiffany_devCamp/gallery.html'
+                // Saving the name the user put in for later
+                document.location.href = 'http://localhost:63342/tiffany_devCamp/gallery.html';
+                // Directing to gallery
             }
         }
     }
@@ -34,5 +33,8 @@ function checkIfValid(event) {
 
 function invalidInput(event) {
     event.preventDefault(alert("That is not a valid input. Please try again."));}
+    //Alerts user that their input was invalid
+    // TODO: get rid of alert and make it more user friendly
 
 form.addEventListener('submit', checkIfValid, false);
+ //Event listener to check if the users input is valid when they press submit

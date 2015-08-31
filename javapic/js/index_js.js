@@ -4,9 +4,7 @@
 setInterval(function(){ changebg(); }, 20000);
 
 var bgImg = document.getElementById("jumbotron");
-//console.log(bgImg.bgImg.style.backgroundImage = "image");
 var i = 1;
-//var testImg = "images/pdxcg_0" + i + ".jpg";
 
 function changebg() {
     if (i<=9){
@@ -15,13 +13,13 @@ function changebg() {
     }
     else {
         bgImg.style.backgroundImage = "url('images/pdxcg_" + i + ".jpg')";
-        console.log(i);
     }
-    console.log(i);
     if (i===60) {
         i=0;
     }
     i++;
-    //testImg = "images/pdxcg_0" + i + ".jpg";
-    console.log(bgImg.style.backgroundImage);
 }
+
+//loops through function every 20 seconds
+//looping through the images and either adding a 0 or not adding a 0
+//Then looping through all the images and if the image equals 60 goes back to 0
