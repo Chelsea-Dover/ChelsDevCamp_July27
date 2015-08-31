@@ -2,15 +2,6 @@
  * Created by Chelsea on 8/27/15.
  */
 
-
-//var test = document.valueOf(email);
-//var test = regex.test(email)
-//var valid = validInput.test(email);
-
-//console.log(email);
-//console.log(email.valid);
-//console.log(test);
-
 var form = document.getElementById("signup");
 var inputs = document.getElementsByTagName("input");
 var name = document.querySelector('[name=name]');

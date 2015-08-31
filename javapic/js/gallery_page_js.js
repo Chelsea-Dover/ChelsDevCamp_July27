@@ -57,14 +57,7 @@ function changeName(){   // if the will support it continue
     var str = document.getElementsByClassName("tagline");   //Making a var for the string on the HTML
     var name = sessionStorage.getItem('name');  //Getting the item from sessionStorage
     console.log(name);
-    //var replacedWord = /tiffany/i;
-    //var testing = str.replace(replacedWord, name);
-    //document.write(testing);
-    //console.log(str);
     document.body.innerHTML = document.body.innerHTML.replace(/tiffany/g, name);
-    //welcomeText = welcomeText.replace("tiffany", name);
-    //welcomeText = welcomeText.replace("tiffany", "name"); // replacing the word tiffany in welcomeText with the username from
-    // sessionStorage
 
 }
 
