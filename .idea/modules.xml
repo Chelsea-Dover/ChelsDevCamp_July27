@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Chelsea_Python_DevCamp.iml" filepath="$PROJECT_DIR$/.idea/Chelsea_Python_DevCamp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../tiffany_devCamp/.idea/tiffany_devCamp.iml" filepath="$PROJECT_DIR$/../tiffany_devCamp/.idea/tiffany_devCamp.iml" />
     </modules>
   </component>
 </project>
