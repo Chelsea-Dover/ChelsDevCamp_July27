@@ -1,25 +1,26 @@
-""" The View displays data for interaction with user """
+""" The View displays data for interaction with user. """
 
 from itertools import zip_longest
 
 class View:
-    """ THis is how the game is presented to the player"""
+    """ This is how the game is presented to the player. """
 
     def __init__(self):
-        """Init's view"""
-        self.outcome = ""
+        """Init's the view. """
         self.adjustment = -1
 
     def starting_print(self):
-        """Print's rules """
-        text = "Choose a column to drop your color checker."
-        text += "Take turns for each move."
-        text += "The object of the game is to get four of your color"
-        text += "checkers either vertically, horizontally, or diagonally."
+        """ Prints the rules for the game. """
+        text = "\nWelcome to Connect Four. The rules:"
+        text += "\nChoose a column to drop the token of your color.\n"
+        text += "Take turns for each move.\n"
+        text += "The object of the game is to get four of your color\n"
+        text += "tokens in a row either vertically, horizontally,\n"
+        text += "or diagonally before the other player. Enjoy!\n"
         print(text)
 
     def show_board(self, board):
-        """Show the current board """
+        """ Displays the current board. """
         print()
         print(" 1 2 3 4 5 6 7")
         for each_row in range(6):
@@ -28,12 +29,13 @@ class View:
         print(" ^           ^ ")
 
     def show_turn(self, playing_player):
-        """Print's the turn and asks for input"""
+        """ Prints the turn and asks for input. """
         inputNeeded = True
         players_move = 0
         while inputNeeded:
             # Prompt the user for their move
-            players_move = input("Your turn, {}. What Column do you want to put your checker? (Please put in 1-7):  "
+            players_move = input("\nYour turn, {}.\n" \
+                "Choose a column 1-7: "
                   .format(playing_player[0]))
 
             # Make sure that they give an int, and convert it to an int
@@ -54,9 +56,11 @@ class View:
         return players_move
 
     def show_winner(self, playing_player):
-        """Print's if four in a row."""
+        """Print's if four in a row exists. """
         print("Yay! {} won! (^-^)".format(playing_player))
 
     def show_tie(self):
-        """Print's if no more spaces on board"""
+        """ Print's if the board is full. """
         print("Yay! It's a tie! (^-^)")
+
+
