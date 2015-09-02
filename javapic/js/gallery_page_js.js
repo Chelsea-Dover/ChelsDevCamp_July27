@@ -62,7 +62,6 @@ function changeName(){   // if the will support it continue
     var name = sessionStorage.getItem('name');  //Getting the item from sessionStorage
     console.log(name);
     document.body.innerHTML = document.body.innerHTML.replace(/tiffany/g, name);
-
 }
 //Changing the name on the string in the HTML
 

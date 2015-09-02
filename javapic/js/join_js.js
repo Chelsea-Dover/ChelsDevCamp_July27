@@ -16,6 +16,7 @@ function checkIfValid(event) {
             //Making a var that tests to see if the email is what we want and returns true of false
             if (!validInput) {
                 invalidInput(event);
+
                 // If validinput returns a false
                 //calling the function invalidInput
             } else {
@@ -27,9 +28,6 @@ function checkIfValid(event) {
         }
     }
 }
-
-
-
 
 function invalidInput(event) {
     event.preventDefault(alert("That is not a valid input. Please try again."));}
