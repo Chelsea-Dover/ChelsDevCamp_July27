@@ -17,6 +17,7 @@ function checkIfValid(event) {
             if (!validInput) {
                 invalidInput(event);
 
+
                 // If validinput returns a false
                 //calling the function invalidInput
             } else {

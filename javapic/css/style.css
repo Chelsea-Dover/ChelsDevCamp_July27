@@ -65,6 +65,10 @@ main {
 }
 
 /**------------------ Form Styling----------------- **/
+/*p {
+    text-align: center;
+    color: #94BA65;
+}*/
 .signup {
     width: 200px;
     background-color: #fff;
