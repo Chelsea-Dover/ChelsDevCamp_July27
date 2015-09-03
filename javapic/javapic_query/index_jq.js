@@ -23,3 +23,4 @@ $(document).ready(function(){
         i++;
     }
 });
+//Loops thru i and changes the background img every 20 seconds
