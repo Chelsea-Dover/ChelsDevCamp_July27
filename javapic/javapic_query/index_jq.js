@@ -11,11 +11,11 @@ $(document).ready(function(){
     function changebg() {
         if (i<=9){
             console.log(i);
-            ($bgImg).css('background-image','url(images/pdxcg_0' + i + '.jpg)');
+            $($bgImg).css('background-image','url(images/pdxcg_0' + i + '.jpg)');
         }
         else {
             console.log(i);
-            ($bgImg).css('background-image','url(images/pdxcg_' + i + '.jpg)');
+            $($bgImg).css('background-image','url(images/pdxcg_' + i + '.jpg)');
         }
         if (i===60) {
             i=0;
