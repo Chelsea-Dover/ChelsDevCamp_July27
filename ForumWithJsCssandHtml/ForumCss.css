@@ -1,0 +1,35 @@
+body {
+    background-color: #fff;
+    border-radius: 20px;
+    color: #fff;
+
+
+}
+
+main {
+    background-color: #94BA65;
+    list-style: none;
+    text-align: center;
+    margin: 50px 50px 50px 50px;
+    padding: 40px 20px 40px 20px;
+}
+
+h1 {
+    text-align: center;
+    background-color: #2790B0;
+    margin: 50px 50px 50px 50px;
+    padding: 40px 20px 40px 20px;
+}
+
+/*section {*/
+    /*background-color: #2790B0;*/
+    /*margin: 80px;*/
+/*}*/
+
+li {
+    background-color: #2790B0;
+    margin: 50px 50px 50px 50px;
+    text-align: center;
+    padding: 40px 20px 40px 20px;
+}
+}
