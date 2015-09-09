@@ -1,13 +1,7 @@
 """ The View displays data for interaction with user. """
 
-from itertools import zip_longest
-
 class View:
     """ This is how the game is presented to the player. """
-
-    def __init__(self):
-        """Init's the view. """
-        self.adjustment = -1
 
     def starting_print(self):
         """ Prints the rules for the game. """
@@ -43,7 +37,7 @@ class View:
                 conversion = int(players_move)
             except ValueError:
                 conversion = 8
-                print("That's not a valid input. ")
+                print("Invalid input. Please put in a number 1-7. ")
 
             # Check that it's in the range of 1-7
             if conversion not in range(1, 8):

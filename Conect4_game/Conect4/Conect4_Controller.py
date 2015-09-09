@@ -18,7 +18,6 @@ class Controller:
 
     def get_board_status(self):
         """ Takes input from grid and updates view for display. """
-        self.board = self.model.grid
         self.view.show_board(self.board)
 
     def get_move(self):
@@ -44,19 +43,22 @@ class Controller:
 
     def check_winner(self):
         """
-        Checks to see if four in a row exists horizontally, vertically, or diagonally. """
+        Checks to see if four in a row exists horizontally, vertically, or diagonally."""
+        #checks columns
         for x in self.board:
             if self.model.playing_player[1] * 4 in "".join(x):
                 return True
-
+        #Checks the rows
         for each_row in range(6):
             if self.model.playing_player[1] * 4 in "".join(column[each_row] for column in self.board):
                 return True
 
+        #Get's diagonals(cartesian product of a series of lists)
+        #checks diagonal
         for row, column in product(range(5,2, -1), range(4)):
             if self.model.playing_player[1] * 4 in "".join(self.board[column + i][row - i] for i in range(4)):
                 return True
-
+        #checks the other diagonal
         for row, column in product(range(3), range(4)):
             if self.model.playing_player[1] * 4 in "".join(self.board[column + i][row + i] for i in range(4)):
                 return True
@@ -80,7 +82,7 @@ class Controller:
             winner = self.check_tie()
             if winner:
                 self.view.show_board(self.board)
-                self.view.show_tie(self.model.playing_player[0])
+                self.view.show_tie()
             self.model.swap_player()
 
 

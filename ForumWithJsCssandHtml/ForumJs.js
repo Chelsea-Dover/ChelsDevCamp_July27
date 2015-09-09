@@ -2,49 +2,39 @@
  * Created by Chelsea on 9/8/15.
  */
 
-
-//function postThePost(){
-//console.log();
-    //console.log('test');
-
-
-//}
+//(function () {
+//    var forum = $( '#post' ).position();
+//    if (forum === 0){
+//        console.log("test!")
+//    }
+//})();
 
 $.ajax({
 url: 'https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values?alt=json-in-script',
 type: "GET",
 dataType: "jsonp",
 complete: function(data) {
-
-    //console.log("Bruh");
     console.log(data.responseJSON.feed.entry);
     var object = data.responseJSON.feed.entry;
-    //var id = data.feed.entry[i].id.$t;
-    //var title = object.title.$t;
-    var string = "<ul>";
-    //var content = data.feed.entry[i].content.$t;
-    //console.log(object.gsx$posttitle);
+    object.reverse();
     for (var i=0; i < object.length; i++) {
-        //console.log(title);
+
         var itemtitle = data.responseJSON.feed.entry[i].gsx$posttitle.$t;
         var itembody = data.responseJSON.feed.entry[i].gsx$postbody.$t;
 
-        string += '<li>'+itemtitle+'<br>'+itembody+'</li>';
+        var string = '<li>'+itemtitle+'<br>'+itembody+'</li>';
 
         $( 'body' ).append(string);
-        //var id = data.feed.entry[i].id.$t;
-        //console.log(object.gsx$posttitle.$t);
-        //console.log(object['gsx$posttitle']);
-        //var fucku = ['<li><p>' + i + 'object.gsx$posttitle.$t' + '</p></li>'];
-        //console.log('object.gsx$posttitle.$t.posttitle');
-        //$( 'main' ).append(fucku);
-        //$( 'main' ).append('<li><p>' + i  + '</p></li>');
-        //$( 'main').append('<li>'+ i + object.gsx$posttitle.$t +'</li>');
-
-        //$(' main ').append(['object']['gsx$posttitle']['$t']);
-    //    $(object).push('test');
-    //var inputtitle=$('input[name=posttitle]').val();
-    //console.log(inputtitle);
     }
 }
+});
+
+$('#post').on('submit', function (e){
+    e.preventDefault();
+    var title = $('input[name=posttitle]');
+    var body = $('input[name=postbody]');
+    var post = {'entry_434124687':title.val(), 'entry_1823097801': body.val()};
+    $.post(
+        'https://docs.google.com/forms/d/1blH7mM6udvlyJ0SrPmbXoNPZg8XCqDQaxHTPrK0HQbA/formResponse', post);
+    location.reload();
 });
