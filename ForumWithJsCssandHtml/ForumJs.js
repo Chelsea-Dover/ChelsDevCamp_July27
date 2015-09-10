@@ -7,8 +7,7 @@ url: 'https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKw
 type: "GET",
 dataType: "jsonp",
 complete: function(data) {
-    console.log(data);
-    console.log(data.responseJSON.feed.entry);
+    console.log(data.responseJSON);
     var object = data.responseJSON.feed.entry;
     object.reverse();
     for (var i=0; i < object.length; i++) {
@@ -23,6 +22,7 @@ complete: function(data) {
 }
 });
 
+
 $('#post').on('submit', function (e){
     e.preventDefault();
     var title = $('input[name=posttitle]');
@@ -32,7 +32,6 @@ $('#post').on('submit', function (e){
         'https://docs.google.com/forms/d/1blH7mM6udvlyJ0SrPmbXoNPZg8XCqDQaxHTPrK0HQbA/formResponse', post);
     location.reload();
 });
-
 
 $(document).ready(function() {
 var stickyNavTop = $('.nav').offset().top;
