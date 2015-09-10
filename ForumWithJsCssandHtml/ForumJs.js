@@ -2,18 +2,12 @@
  * Created by Chelsea on 9/8/15.
  */
 
-//(function () {
-//    var forum = $( '#post' ).position();
-//    if (forum === 0){
-//        console.log("test!")
-//    }
-//})();
-
 $.ajax({
 url: 'https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values?alt=json-in-script',
 type: "GET",
 dataType: "jsonp",
 complete: function(data) {
+    console.log(data);
     console.log(data.responseJSON.feed.entry);
     var object = data.responseJSON.feed.entry;
     object.reverse();
@@ -37,4 +31,25 @@ $('#post').on('submit', function (e){
     $.post(
         'https://docs.google.com/forms/d/1blH7mM6udvlyJ0SrPmbXoNPZg8XCqDQaxHTPrK0HQbA/formResponse', post);
     location.reload();
+});
+
+
+$(document).ready(function() {
+var stickyNavTop = $('.nav').offset().top;
+
+var stickyNav = function(){
+var scrollTop = $(window).scrollTop();
+
+    if (scrollTop > stickyNavTop) {
+        $('.nav').addClass('sticky');
+    } else {
+        $('.nav').removeClass('sticky');
+    }
+};
+
+stickyNav();
+
+$(window).scroll(function() {
+    stickyNav();
+});
 });
