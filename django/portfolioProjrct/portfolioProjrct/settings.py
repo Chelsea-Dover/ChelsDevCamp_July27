@@ -37,6 +37,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'PortfolioContent.ForumWithJsCssandHtml',
+    'PortfolioContent.javapic_files'
+    'PortfolioContect.javapic_jquery_files'
+    'zen_Mockup'
 )
 
 MIDDLEWARE_CLASSES = (
