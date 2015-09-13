@@ -1,15 +1,14 @@
 from django.shortcuts import render
 from django.http import  HttpResponse
 
-# def about(request):
-#     return render(request, 'about')
+def forum(request):
+    return render(request, 'forumHtml.html')
 
 def zen(request):
-    # return HttpResponse("Corgis are awesome! <a href='/hello'>Go to homepage</a>")
     return render(request, 'zen_mockup.html')
 
-# def javapic(request):
-#     return render(request, 'javapic.html')
+def javapic(request):
+    return render(request, 'jsindex.html')
 
-# def javapic_jquery(request):
-#     return render(request, 'javapic_files/')
+# def javajoin(request):
+#     return render(request, 'join.html')
