@@ -2,25 +2,27 @@
  * Created by Chelsea on 9/8/15.
  */
 
-$.ajax({
-url: 'https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values?alt=json-in-script',
-type: "GET",
-dataType: "jsonp",
-complete: function(data) {
-    console.log(data.responseJSON);
-    var object = data.responseJSON.feed.entry;
-    object.reverse();
-    for (var i=0; i < object.length; i++) {
+(function () {
+    $.ajax({
+        url: 'https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values?alt=json-in-script',
+        type: "GET",
+        dataType: "jsonp",
+        complete: function(data) {
 
-        var itemtitle = data.responseJSON.feed.entry[i].gsx$posttitle.$t;
-        var itembody = data.responseJSON.feed.entry[i].gsx$postbody.$t;
+            var foruminfo = data.responseJSON.feed.entry;
+            foruminfo.reverse();
+            for (var i=0; i < foruminfo.length; i++) {
 
-        var string = '<li>'+itemtitle+'<br>'+itembody+'</li>';
+                var itemtitle = data.responseJSON.feed.entry[i].gsx$posttitle.$t;
+                var itembody = data.responseJSON.feed.entry[i].gsx$postbody.$t;
 
-        $( 'body' ).append(string);
-    }
-}
-});
+                var string = '<li>'+itemtitle+'<br>'+itembody+'</li>';
+
+                $( 'body' ).append(string);
+            }
+        }
+    })
+}());
 
 
 $('#post').on('submit', function (e){

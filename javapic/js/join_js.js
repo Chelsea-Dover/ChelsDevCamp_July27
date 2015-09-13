@@ -23,7 +23,7 @@ function checkIfValid(event) {
             } else {
                 sessionStorage.setItem('name', inputs[0].value);
                 // Saving the name the user put in for later
-                document.location.href = 'http://localhost:63342/tiffany_devCamp/gallery.html';
+                document.location.href = '../html/gallery.html';
                 // Directing to gallery
             }
         }

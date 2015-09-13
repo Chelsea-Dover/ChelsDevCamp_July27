@@ -22,7 +22,7 @@ function checkIfValid(event) {
             //If email is not valid display alert and preventDefault
         } else {
             sessionStorage.setItem('name', $name.val());
-            document.location.href = 'http://localhost:63342/tiffany_devCamp/gallery.html';
+            document.location.href = '../html/gallery.html';
             // Else save the users name they imputed and go to the gallery
         }
 }
