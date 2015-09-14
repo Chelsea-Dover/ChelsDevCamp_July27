@@ -1,9 +1,14 @@
 from django.shortcuts import render
 
-# from django.shortcuts import render
+def jqjavapic(request):
+    return render(request, 'jqindex.html')
+
+
+# def jqjavapic(request):
+#     return render(request, 'jqindex.html')
 #
-# def javapic(request):
-#     return render(request, 'jsindex.html')
+# def jqjoin(request):
+#     return render(request, 'jqjoin.html')
 #
-# def join(request):
-#     return render(request, 'join.html')
+# def jqgallery(request):
+#     return render(request, 'gallery.html')

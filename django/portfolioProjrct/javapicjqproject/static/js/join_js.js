@@ -1,7 +1,6 @@
  /**
  * Created by Chelsea on 8/27/15.
  */
-console.log("Sup bboooiii");
 var form = document.getElementById("signup");
 var inputs = document.getElementsByTagName("input");
 var name = document.querySelector('[name=name]');

@@ -2,19 +2,21 @@
  * Created by Chelsea on 8/27/15.
  */
 
-
+console.log("yp");
 var position = document.getElementById("gallery");
 var displayImage = document.getElementById("image_show");
 var imageChild = displayImage.children[0];
 
 var images = [];
 function arrayOfImages() {
+    console.log('test');
     for (var i=1; i<=60; i ++) {
         if (i<=9){
-            images.push("images/pdxcg_0" + i + ".jpg");
+            console.log('gt');
+            images.push("/static/images/pdxcg_0" + i + ".jpg");
 
         } else {
-            images.push("images/pdxcg_" + i + ".jpg");
+            images.push("/static/images/pdxcg_" + i + ".jpg");
         }
     }
     //while the image is under 10 add a 0 if it's greater than 9 don't add a 0

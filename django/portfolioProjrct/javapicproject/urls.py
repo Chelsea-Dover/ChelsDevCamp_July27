@@ -4,6 +4,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.javapic, name='javapic'),
-    url(r'^join', views.join, name='javapic/join')
+    url(r'^join', views.join, name='join'),
+    url(r'^gallery', views.gallery, name='gallery')
 
 ]

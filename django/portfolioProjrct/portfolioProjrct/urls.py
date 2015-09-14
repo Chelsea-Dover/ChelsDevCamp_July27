@@ -8,5 +8,6 @@ urlpatterns = [
 
     url(r'^zen_mockup/', views.zen, name='zen_mockup'),
     url(r'^forum/', views.forum, name='forum'),
-    url(r'^javapic/', include('javapicproject.urls'))
+    url(r'^javapic/', include('javapicproject.urls')),
+    url(r'^jquerypic/', include('javapicjqproject.urls')),
 ]

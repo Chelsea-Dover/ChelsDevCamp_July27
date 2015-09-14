@@ -10,5 +10,5 @@ def zen(request):
 def javapic(request):
     return render(request, 'jsindex.html')
 
-# def javajoin(request):
-#     return render(request, 'join.html')
+def jquerypic(request):
+    return render(request, 'jqindex.html')

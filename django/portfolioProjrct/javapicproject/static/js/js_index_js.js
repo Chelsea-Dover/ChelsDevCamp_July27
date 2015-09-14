@@ -1,7 +1,6 @@
 /**
  * Created by Chelsea on 8/27/15.
  */
-console.log("YO");
 setInterval(function(){ changebg(); }, 20000);
 
 var bgImg = document.getElementById("jumbotron");

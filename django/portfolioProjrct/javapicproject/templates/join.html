@@ -12,6 +12,7 @@
     <section class="signup">
         <h2>join us</h2>
         <form id="signup" method="post" novalidate>
+            {% csrf_token %}
             <label for="name">name</label>
             <input type="text" name="name" placeholder="name" required/>
             <label for="username">username</label>

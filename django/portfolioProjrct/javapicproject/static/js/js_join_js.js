@@ -1,7 +1,6 @@
  /**
  * Created by Chelsea on 8/27/15.
  */
- console.log("BRooo");
 
 var form = document.getElementById("signup");
 var inputs = document.getElementsByTagName("input");
@@ -23,8 +22,10 @@ function checkIfValid(event) {
                 //calling the function invalidInput
             } else {
                 sessionStorage.setItem('name', inputs[0].value);
+                var name = sessionStorage.getItem('name');
+                console.log(name);
                 // Saving the name the user put in for later
-                document.location.href = 'javapic/gallery';
+                //document.location.href = '/javapic/gallery';
                 // Directing to gallery
             }
         }

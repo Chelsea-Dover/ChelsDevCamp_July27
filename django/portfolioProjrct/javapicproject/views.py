@@ -5,3 +5,6 @@ def javapic(request):
 
 def join(request):
     return render(request, 'join.html')
+
+def gallery(request):
+    return render(request, 'gallery.html')

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>javapic</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="{% static "css/style.css" %}"/>
 </head>
 <body>
 <main class="gallery_page">
@@ -13,8 +14,7 @@
     </section>
     <div id="image_show" class="display_none"><img src="../static/images/pdxcg_40.jpg" /></div>
 </main>
-<script src="../javapic_query/gallery_jq.js"> </script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script type="text/javascript" src="{% static "js/js_index_js.js" %}"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static "js/gallery_page_js.js" %}"></script>
 </body>
 </html>
