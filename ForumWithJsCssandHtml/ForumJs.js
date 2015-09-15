@@ -13,10 +13,10 @@
             foruminfo.reverse();
             for (var i=0; i < foruminfo.length; i++) {
 
-                var itemtitle = data.responseJSON.feed.entry[i].gsx$posttitle.$t;
-                var itembody = data.responseJSON.feed.entry[i].gsx$postbody.$t;
+                var itemTitle = data.responseJSON.feed.entry[i].gsx$posttitle.$t;
+                var itemBody = data.responseJSON.feed.entry[i].gsx$postbody.$t;
 
-                var string = '<li>'+itemtitle+'<br>'+itembody+'</li>';
+                var string = '<li>'+itemTitle+'<br>'+itemBody+'</li>';
 
                 $( 'body' ).append(string);
             }
@@ -39,9 +39,9 @@ $(document).ready(function() {
 var stickyNavTop = $('.nav').offset().top;
 
 var stickyNav = function(){
-var scrollTop = $(window).scrollTop();
+var top = $(window).scrollTop();
 
-    if (scrollTop > stickyNavTop) {
+    if (top > stickyNavTop) {
         $('.nav').addClass('sticky');
     } else {
         $('.nav').removeClass('sticky');
