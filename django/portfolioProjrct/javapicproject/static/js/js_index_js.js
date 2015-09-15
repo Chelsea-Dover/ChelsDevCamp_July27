@@ -9,10 +9,10 @@ var i = 1;
 function changebg() {
     if (i<=9){
         console.log(i);
-        bgImg.style.backgroundImage = "url('static/images/pdxcg_0" + i + ".jpg')";
+        bgImg.style.backgroundImage = "url('/static/images/pdxcg_0" + i + ".jpg')";
     }
     else {
-        bgImg.style.backgroundImage = "url('static/images/pdxcg_" + i + ".jpg')";
+        bgImg.style.backgroundImage = "url('/static/images/pdxcg_" + i + ".jpg')";
     }
     if (i===10) {
         i=0;

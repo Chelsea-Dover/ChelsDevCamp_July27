@@ -12,3 +12,6 @@ def javapic(request):
 
 def jquerypic(request):
     return render(request, 'jqindex.html')
+
+def home(request):
+    return render(request, 'homepg.html')

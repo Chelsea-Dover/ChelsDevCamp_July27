@@ -25,7 +25,7 @@ function checkIfValid(event) {
                 var name = sessionStorage.getItem('name');
                 console.log(name);
                 // Saving the name the user put in for later
-                //document.location.href = '/javapic/gallery';
+                document.location.href = '/javapic/gallery';
                 // Directing to gallery
             }
         }

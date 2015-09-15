@@ -12,7 +12,6 @@ function arrayOfImages() {
     console.log('test');
     for (var i=1; i<=60; i ++) {
         if (i<=9){
-            console.log('gt');
             images.push("/static/images/pdxcg_0" + i + ".jpg");
 
         } else {

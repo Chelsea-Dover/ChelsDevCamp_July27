@@ -28,7 +28,7 @@
 $('#post').on('submit', function (e){
     e.preventDefault();
     var title = $('input[name=posttitle]');
-    var body = $('input[name=postbody]');
+    var body = $('textarea[name=postbody]');
     var post = {'entry_434124687':title.val(), 'entry_1823097801': body.val()};
     $.post(
         'https://docs.google.com/forms/d/1blH7mM6udvlyJ0SrPmbXoNPZg8XCqDQaxHTPrK0HQbA/formResponse', post);
@@ -53,4 +53,12 @@ stickyNav();
 $(window).scroll(function() {
     stickyNav();
 });
+});
+
+$( '#post' ).focusin('click', function(e){
+   $( 'form' ).addClass('clicked');
+});
+
+$( "#post" ).focusout(function(){
+    $( 'form').removeClass('clicked');
 });

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/homestyle.css' %}"/>
+    <link href='https://fonts.googleapis.com/css?family=Cabin:400,500' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <h1>Chelsea's projects</h1>
+    <nav>
+    <a href="#">Forum</a>
+    <a href="#">Zen Mockup</a>
+    <a href="#">Javapic</a>
+    <a href="#">Javapic with jquery</a>
+    </nav>
+    <div>
+        <a href="#"><img src="/static/images/forum.png">
+        <p>Zen Mockup</p>
+        </a>
+        <a href="#"><img src="/static/images/javapic.png">
+        <p>Forum</p>
+        </a>
+        <a href="#"><img src="/static/images/zen_mockup.png">
+        <p>Javapic with naked javascript</p>
+        </a>
+        <a href="#"><img src="/static/images/javapic.png">
+        <p>Javapic with jquery</p>
+        </a>
+    </div>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/homepg.js' %}"></script>
+</body>
+</html>

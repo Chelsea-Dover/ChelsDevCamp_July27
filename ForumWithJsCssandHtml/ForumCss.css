@@ -12,7 +12,7 @@ main {
     list-style: none;
     text-align: center;
     margin: 0;
-    padding: 3px 2px 30px 20px;
+    padding: 3px 15px 30px 20px;
 }
 
 h2 {
@@ -41,11 +41,21 @@ p {
     color: #fff;
 }
 
-input {
+input textarea{
     border: 5px solid white;
     box-shadow:
     inset 0 0 8px  rgba(0,0,0,0.1);
     margin: 0 auto
+}
+
+textarea{
+    border: 1px solid #CCCCCC;
+    /*box-shadow:*/
+    /*inset 0 0 8px  rgba(0,0,0,0.1);*/
+    margin: -5px auto;
+    width: 111px;
+    height: 13px;
+
 }
 
 .sticky {
@@ -55,6 +65,12 @@ input {
     top: 0;
     z-index: 100;
     border-top: 0;
-    margin: 0 -11px;
+    margin: 0 -18px;
 }
 
+.clicked textarea {
+    display: block;
+    height: 60px;
+    margin: 11px auto;
+    width: 173px;
+}

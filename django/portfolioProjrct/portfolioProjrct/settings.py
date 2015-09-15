@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'javapicjqproject',
     'javapicproject',
     'zenmockupjqproject',
+    'Homeandabout',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -60,7 +61,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # 'DIRS': [os.path.join(portfolioProjrct, 'templates')],
-        'DIRS': [],
+        'DIRS': ["templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

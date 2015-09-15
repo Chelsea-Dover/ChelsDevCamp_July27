@@ -6,6 +6,7 @@ urlpatterns = [
     # url(r'^$', 'portfolioProjrct.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
+    url(r'^$', views.home, name='home'),
     url(r'^zen_mockup/', views.zen, name='zen_mockup'),
     url(r'^forum/', views.forum, name='forum'),
     url(r'^javapic/', include('javapicproject.urls')),

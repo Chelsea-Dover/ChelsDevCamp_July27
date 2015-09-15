@@ -12,10 +12,10 @@ var $images = [];
 ( function () {
     for (var i=1; i<=60; i ++) {
         if (i<=9){
-            $images.push("images/pdxcg_0" + i + ".jpg");
+            $images.push("/static/images/pdxcg_0" + i + ".jpg");
 
         } else {
-            $images.push("images/pdxcg_" + i + ".jpg");
+            $images.push("/static/images/pdxcg_" + i + ".jpg");
         }
     }
     //Loops thru 1-60 and appends imgs to $images
