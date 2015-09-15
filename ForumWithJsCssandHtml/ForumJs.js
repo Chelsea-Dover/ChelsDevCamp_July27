@@ -24,7 +24,6 @@
     })
 }());
 
-
 $('#post').on('submit', function (e){
     e.preventDefault();
     var title = $('input[name=posttitle]');
