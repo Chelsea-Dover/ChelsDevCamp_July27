@@ -2,7 +2,16 @@
  * Created by Chelsea on 9/14/15.
  */
 
-    $( 'img' ).mouseover('click', function(e){
-        alert("Yooo");
-       $( 'img' ).addClass('onhover');
-    });
+//var $hoverOver = ('div img:first-child');
+//$( 'p' ).hide();
+//
+//$( 'img' ).mouseover('click', function(e){
+//    $( e.target ).removeClass('onhover');
+//    //$( 'p' ).show();
+//});
+//
+//
+//$( 'img' ).mouseout('click', function(e){
+//    $( e.target ).addClass('onhover');
+//    //$( 'p' ).hide();
+//});

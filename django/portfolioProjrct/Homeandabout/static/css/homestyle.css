@@ -1,8 +1,12 @@
 img {
-    width: 291px;
-    height: 185px;
+    width: 97%;
     outline: 2px solid #F5B349;
     box-shadow: 1px 6px 3px #888888;
+    display: inline-block;
+    float: left;
+    z-index:1;
+    top: 20px;
+    margin: 57px 0;
 }
 
 body{
@@ -15,10 +19,12 @@ body{
 
 div {
     display: inline;
+    position: relative;
 }
 
 div>a {
     float: left;
+    width: 20%;
     margin: 40px 30px;
 }
 
@@ -32,14 +38,130 @@ nav {
     background-color: #0E2430;
     padding: 13px 0 12px 0;
     box-shadow: 4px 6px 9px #888888;
+    border-bottom: 2px solid #F5B349;
 }
 h1 {
     margin: 6px 0 18px;
     color: #0E2430;
 }
 
-.onhover {
-    opacity: 0.4;
-    filter: alpha(opacity=40); /* For IE8 and earlier */
+.forumwapper {
+    position: relative;
+    padding: 0;
+    width:17%;
+    display: inline-block;
 }
 
+.forumtext {
+    position: absolute;
+    top: 57px;
+    left: 0;
+    color:#000;
+    background-color:rgba(255,255,255,0.8);
+    width: 97%;
+    height: 132px;
+    line-height:100px;
+    text-align: center;
+    z-index: 10;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.forumtext:hover {
+    opacity:1;
+}
+
+/*-------------*/
+
+.jswapper {
+    position: relative;
+    padding: 0;
+    width:17%;
+    display: inline-block;
+    top: 3px;
+}
+
+.jstext {
+    position: absolute;
+    top: 57px;
+    left: 0;
+    color:#000;
+    background-color:rgba(255,255,255,0.8);
+    width: 97%;
+    height: 132px;
+    line-height:100px;
+    text-align: center;
+    z-index: 10;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.jstext:hover {
+    opacity:1;
+}
+
+/*-------------------*/
+
+.zenwapper {
+    position: relative;
+    padding: 0;
+    width:17%;
+    display: inline-block;
+}
+
+.zentext {
+    position: absolute;
+    top: 57px;
+    left: 0;
+    color:#000;
+    background-color:rgba(255,255,255,0.8);
+    width: 97%;
+    height: 132px;
+    line-height:100px;
+    text-align: center;
+    z-index: 10;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.zentext:hover {
+    opacity:1;
+}
+
+/*-------------------*/
+
+.jqwapper {
+    position: relative;
+    padding: 0;
+    width: 17%;
+    display: inline-block;
+}
+
+.jqtext {
+    position: absolute;
+    top: 57px;
+    left: 0;
+    color:#000;
+    background-color:rgba(255,255,255,0.8);
+    width: 97%;
+    height: 132px;
+    line-height:100px;
+    text-align: center;
+    z-index: 10;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.jqtext:hover {
+    opacity:1;
+}
+
+/*-------------------*/

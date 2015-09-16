@@ -9,26 +9,44 @@
 <body>
     <h1>Chelsea's projects</h1>
     <nav>
-    <a href="#">Forum</a>
-    <a href="#">Zen Mockup</a>
-    <a href="#">Javapic</a>
-    <a href="#">Javapic with jquery</a>
+    <a href="/forum">Forum</a>
+    <a href="/zen_mockup">Zen Mockup</a>
+    <a href="/javapic">Javapic</a>
+    <a href="/jquerypic">Javapic with jquery</a>
     </nav>
-    <div>
-        <a href="#"><img src="/static/images/forum.png">
-        <p>Zen Mockup</p>
-        </a>
-        <a href="#"><img src="/static/images/javapic.png">
-        <p>Forum</p>
-        </a>
-        <a href="#"><img src="/static/images/zen_mockup.png">
-        <p>Javapic with naked javascript</p>
-        </a>
-        <a href="#"><img src="/static/images/javapic.png">
-        <p>Javapic with jquery</p>
-        </a>
-    </div>
+
+        <!--<div class="forumwapper">-->
+            <a href="/forum" class="forumwapper" >
+            <span class="forumtext">
+                Forum
+            </span>
+            <img src="/static/images/forum.png" >
+            </a>
+        <!--</div>-->
+            <a href="/javapic" class="jswapper" >
+            <span class="jstext">
+                Javapic
+            </span>
+            <img src="/static/images/javapic.png" >
+            </a>
+
+        <!--<div>-->
+            <a href="/zen_mockup" class="zenwapper" >
+            <span class="zentext">
+                Zen mockup
+            </span>
+            <img src="/static/images/zen_mockup.png" >
+            </a>
+
+        <!--<div>-->
+            <a href="/jquerypic" class="jqwapper" >
+            <span class="jqtext">
+                Javapic
+            </span>
+            <img src="/static/images/javapic.png" >
+            </a>
+
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script type="text/javascript" src="{% static 'js/homepg.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/homequery.js' %}"></script>
 </body>
 </html>
