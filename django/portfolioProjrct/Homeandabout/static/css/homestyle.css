@@ -17,17 +17,6 @@ body{
     margin: 0 0;
 }
 
-div {
-    display: inline;
-    position: relative;
-}
-
-div>a {
-    float: left;
-    width: 20%;
-    margin: 40px 30px;
-}
-
 a {
     text-decoration: none;
     color: #FFFFFF;
@@ -45,6 +34,8 @@ h1 {
     color: #0E2430;
 }
 
+
+/*-------------------*/
 .forumwapper {
     position: relative;
     padding: 0;
@@ -73,7 +64,7 @@ h1 {
     opacity:1;
 }
 
-/*-------------*/
+/*-------------------*/
 
 .jswapper {
     position: relative;
