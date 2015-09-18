@@ -1,3 +1,8 @@
+article{
+    color: #333333;
+    padding: 55px 0 52px;
+}
+
 img {
     width: 97%;
     outline: 2px solid #F5B349;
@@ -23,6 +28,10 @@ a {
     margin: 0 30px;
 }
 
+a:hover {
+    color: #E8DDCB ;
+}
+
 nav {
     background-color: #0E2430;
     padding: 13px 0 12px 0;
@@ -30,13 +39,21 @@ nav {
     border-bottom: 2px solid #F5B349;
 }
 h1 {
-    margin: 6px 0 18px;
-    color: #0E2430;
+    margin: 0 18px;
+    color: #fff;
+    padding: 145px 20px 0;
+}
+
+.jumbotron {
+    background-image: url("../images/jumbo.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 400px;
 }
 
 
 /*-------------------*/
-.forumwapper {
+.wapper {
     position: relative;
     padding: 0;
     width:17%;
@@ -66,14 +83,6 @@ h1 {
 
 /*-------------------*/
 
-.jswapper {
-    position: relative;
-    padding: 0;
-    width:17%;
-    display: inline-block;
-    top: 3px;
-}
-
 .jstext {
     position: absolute;
     top: 57px;
@@ -97,13 +106,6 @@ h1 {
 
 /*-------------------*/
 
-.zenwapper {
-    position: relative;
-    padding: 0;
-    width:17%;
-    display: inline-block;
-}
-
 .zentext {
     position: absolute;
     top: 57px;
@@ -126,13 +128,6 @@ h1 {
 }
 
 /*-------------------*/
-
-.jqwapper {
-    position: relative;
-    padding: 0;
-    width: 17%;
-    display: inline-block;
-}
 
 .jqtext {
     position: absolute;
