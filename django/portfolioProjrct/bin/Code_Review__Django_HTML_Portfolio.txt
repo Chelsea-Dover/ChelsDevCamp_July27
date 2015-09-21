@@ -1,0 +1,13 @@
+Hey Chelsea, 
+
+Your code looks solid, all your views, static files, and urls in django work as advertised. Nice work. 
+
+I believe this is just a convention, but you might consider changing the name of your forum template from forumHtml.html to just forum.html. I don’t believe I’ve ever seen a camel case HTML filename - maybe you could start a trend! :)
+
+This isn’t a coding issue, but it would be cool if your about page had some info about you. If someone’s going to your page about hiring you, I think the expectation is there will be some biographical info and/or some info about your technical capabilities. 
+
+Not a django issue, but I can’t get a post to go through on your forum - it was definitely working before. Could very well be something on my end. I’d recommend testing it before going live.   
+
+Also now that you have your static files working, you could delete the commented-out code in your jqindex.html template. 
+
+Other than that, this looks good to check in. I’d love to see the version you were working with on Friday with the animal in the header! 
