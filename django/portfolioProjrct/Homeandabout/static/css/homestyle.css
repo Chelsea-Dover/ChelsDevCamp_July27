@@ -71,7 +71,7 @@ img {
     float: left;
     z-index:1;
     top: 20px;
-    margin: 57px 0;
+    margin: 7px 0;
 }
 
 body{
@@ -99,14 +99,14 @@ nav {
     border-bottom: 2px solid #F7F4E8;
 }
 h1 {
-    margin: 0 18px;
+    margin: 0 5px;
     color: #0B0B0D;
     padding: 145px 20px 0;
 }
 
 .jumbotron {
     background-color: #DAF3EA;
-    height: 400px;
+    height: 290px;
     border-bottom: 50px solid #85E6C0;
 }
 
@@ -121,13 +121,14 @@ h1 {
 
 .forumtext {
     position: absolute;
-    top: 57px;
+    top: -13px;
     left: 0;
     color:#000;
     background-color:rgba(255,255,255,0.8);
     width: 97%;
-    height: 132px;
-    line-height:100px;
+    height: 96px;
+    margin-top: 20px;
+    padding-top: 36px;
     text-align: center;
     z-index: 10;
     opacity: 0;
@@ -144,13 +145,14 @@ h1 {
 
 .jstext {
     position: absolute;
-    top: 57px;
+    top: -13px;
     left: 0;
     color:#000;
     background-color:rgba(255,255,255,0.8);
     width: 97%;
-    height: 132px;
-    line-height:100px;
+    height: 96px;
+    margin-top: 20px;
+    padding-top: 36px;
     text-align: center;
     z-index: 10;
     opacity: 0;
@@ -163,17 +165,22 @@ h1 {
     opacity:1;
 }
 
+.smalltext {
+    font-size: 12px;
+}
+
 /*-------------------*/
 
 .zentext {
     position: absolute;
-    top: 57px;
+    top: -13px;
     left: 0;
     color:#000;
     background-color:rgba(255,255,255,0.8);
     width: 97%;
-    height: 132px;
-    line-height:100px;
+    height: 96px;
+    margin-top: 20px;
+    padding-top: 36px;
     text-align: center;
     z-index: 10;
     opacity: 0;
@@ -190,13 +197,14 @@ h1 {
 
 .jqtext {
     position: absolute;
-    top: 57px;
+    top: -13px;
     left: 0;
     color:#000;
     background-color:rgba(255,255,255,0.8);
     width: 97%;
-    height: 132px;
-    line-height:100px;
+    height: 96px;
+    margin-top: 20px;
+    padding-top: 36px;
     text-align: center;
     z-index: 10;
     opacity: 0;
