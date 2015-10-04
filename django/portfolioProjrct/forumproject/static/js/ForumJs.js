@@ -13,10 +13,10 @@
             foruminfo.reverse();
             for (var i=0; i < foruminfo.length; i++) {
 
-                var itemtitle = data.responseJSON.feed.entry[i].gsx$posttitle.$t;
-                var itembody = data.responseJSON.feed.entry[i].gsx$postbody.$t;
+                var itemTitle = data.responseJSON.feed.entry[i].gsx$posttitle.$t;
+                var itemBody = data.responseJSON.feed.entry[i].gsx$postbody.$t;
 
-                var string = '<li>'+itemtitle+'<br>'+itembody+'</li>';
+                var string = '<li>'+itemTitle+'<br>'+itemBody+'</li>';
 
                 $( 'body' ).append(string);
             }
@@ -24,11 +24,10 @@
     })
 }());
 
-
 $('#post').on('submit', function (e){
     e.preventDefault();
     var title = $('input[name=posttitle]');
-    var body = $('input[name=postbody]');
+    var body = $('textarea[name=postbody]');
     var post = {'entry_434124687':title.val(), 'entry_1823097801': body.val()};
     $.post(
         'https://docs.google.com/forms/d/1blH7mM6udvlyJ0SrPmbXoNPZg8XCqDQaxHTPrK0HQbA/formResponse', post);
@@ -39,9 +38,9 @@ $(document).ready(function() {
 var stickyNavTop = $('.nav').offset().top;
 
 var stickyNav = function(){
-var scrollTop = $(window).scrollTop();
+var scrollTopPosition = $(window).scrollTop();
 
-    if (scrollTop > stickyNavTop) {
+    if (scrollTopPosition > stickyNavTop) {
         $('.nav').addClass('sticky');
     } else {
         $('.nav').removeClass('sticky');
@@ -53,4 +52,12 @@ stickyNav();
 $(window).scroll(function() {
     stickyNav();
 });
+});
+
+$( '#post' ).focusin('click', function(e){
+   $( 'form' ).addClass('clicked');
+});
+
+$( "#post" ).focusout(function(){
+    $( 'form').removeClass('clicked');
 });
